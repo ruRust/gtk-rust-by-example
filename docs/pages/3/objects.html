@@ -1,0 +1,288 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Упаковки, кнопки и метки - Gtk-Rust by Example</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../theme/outdated.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../../pages/1/index.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="../../pages/2/hello_world.html"><strong aria-hidden="true">2.</strong> Hello World</a></li><li><a href="../../pages/3/index.html"><strong aria-hidden="true">3.</strong> Боксирующие кнопки</a></li><li><ol class="section"><li><a href="../../pages/3/objects.html" class="active"><strong aria-hidden="true">3.1.</strong> Упаковки, кнопки и метки</a></li><li><a href="../../pages/3/state.html"><strong aria-hidden="true">3.2.</strong> Сопровождение внешнего состояния</a></li><li><a href="../../pages/3/ui.html"><strong aria-hidden="true">3.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/3/programming.html"><strong aria-hidden="true">3.4.</strong> Программирование UI</a></li><li><a href="../../pages/3/review.html"><strong aria-hidden="true">3.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/4/index.html"><strong aria-hidden="true">4.</strong> Составитель статей из HTML</a></li><li><ol class="section"><li><a href="../../pages/4/entries.html"><strong aria-hidden="true">4.1.</strong> Поля, панели, прокручиваемые окна</a></li><li><a href="../../pages/4/horrorshow.html"><strong aria-hidden="true">4.2.</strong> HTML-шаблоны Horrorshow</a></li><li><a href="../../pages/4/structure.html"><strong aria-hidden="true">4.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/4/programming.html"><strong aria-hidden="true">4.4.</strong> Программирование UI</a></li><li><a href="../../pages/4/concl.html"><strong aria-hidden="true">4.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/5/index.html"><strong aria-hidden="true">5.</strong> Простой редактор Common Mark</a></li><li><ol class="section"><li><a href="../../pages/5/source_views.html"><strong aria-hidden="true">5.1.</strong> Выбор файла, просмотр кода и web-страниц</a></li><li><a href="../../pages/5/setting_modules.html"><strong aria-hidden="true">5.2.</strong> Настройка модулей</a></li><li><a href="../../pages/5/ui_misc_rs.html"><strong aria-hidden="true">5.3.</strong> Модуль ui/misc.rs</a></li><li><a href="../../pages/5/creating_ui_structure.html"><strong aria-hidden="true">5.4.</strong> Создание структуры пользовательского интерфейса</a></li><li><a href="../../pages/5/external_state.html"><strong aria-hidden="true">5.5.</strong> Работа с внешним состоянием</a></li><li><a href="../../pages/5/programming.html"><strong aria-hidden="true">5.6.</strong> Создание событий</a></li><li><a href="../../pages/5/markdown_to_html.html"><strong aria-hidden="true">5.7.</strong> Markdown в HTML</a></li><li><a href="../../pages/5/webviews.html"><strong aria-hidden="true">5.8.</strong> Обновление WebViews</a></li><li><a href="../../pages/5/file_choosers.html"><strong aria-hidden="true">5.9.</strong> Диалог выбора файла</a></li><li><a href="../../pages/5/programming_open_button.html"><strong aria-hidden="true">5.10.</strong> Программирование кнопки Open</a></li><li><a href="../../pages/5/programming_save_button.html"><strong aria-hidden="true">5.11.</strong> Программирование кнопки Save</a></li><li><a href="../../pages/5/binding_keys.html"><strong aria-hidden="true">5.12.</strong> Обработка сочетаний клавиш</a></li><li><a href="../../pages/5/review_conclusion.html"><strong aria-hidden="true">5.13.</strong> Обзор и подведение итогов</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Gtk-Rust by Example</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#Упаковки-кнопки-и-метки" id="Упаковки-кнопки-и-метки">Упаковки, кнопки и метки</a></h1>
+<p>Цель этого раздела заключается в том, чтобы дать объяснение объектам, которые будут использованы до того, как мы применим их на практике в следующих разделах.</p>
+<h2><a class="header" href="#gtkbox" id="gtkbox">GtkBox</a></h2>
+<p><strong>GtkBox</strong> является фактически эквивалентом UI вектора в Rust и должен быть объявлен с помощью <strong>Orientation</strong>, который определяет, что должны ли элементы быть выровнены слева направо или сверху вниз. Для тех, кто имеет опыт разработки с современным дизайном HTML5/CSS3, <strong>GtkBox</strong> эквивалентен гибким упаковкам -- они могут расширяться на всё пространство, а виджеты, содержащиеся внутри, тоже могут расширяться в соответствии с правилами, применяемыми при дочерней упаковке.</p>
+<h2><a class="header" href="#Создание-упаковки" id="Создание-упаковки">Создание упаковки</a></h2>
+<p>В следующем примере, мы создадим горизонтальную и вертикальную упаковку с нулевым отступом между дочерними элементами, содержащимися в упаковке. После создания упаковки, вы можете задать виджеты, используя метод <code>pack_*</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let padding_between_children = 0;
+let horizontal_box = Box::new(Orientation::Horizontal, padding_between_children);
+let vertical_box = Box::new(Orientation::Vertical, padding_between_children);
+#}</code></pre></pre>
+<h2><a class="header" href="#Упаковка-упаковки" id="Упаковка-упаковки">Упаковка упаковки</a></h2>
+<p>Вы могли заметить, что метод <code>pack_*</code> принимает большое количество параметров. Первым параметром должна быть ссылка на виджет, которую вы добавляете в контейнер. Вторым и третьим параметрами объявляют параметры заполнения соответственно. Последним параметром объявляют - как много единиц пространства должно быть между дочерними элементами в упаковке.</p>
+<blockquote>
+<p>To further elaborate on the expand and fill parameters, expand defines whether the
+given widget should attempt to use all of the extra space that it can. Each widget that has
+the expand parameter set will equally share that extra space. Meanwhile, fill defines whether
+the extra spaced should actually have that widget fill to cover that extra space, or should
+merely use that extra space as padding.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+health_info.pack_start(&amp;health_label, false, false, 5);
+health_info.pack_start(&amp;health, true, true, 5);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtklabel" id="gtklabel">GtkLabel</a></h2>
+<p><strong>GtkLabel</strong> - это простой виджет, который состоит исключительно из текста. Название говорит само за себя. Всё, что вам нужно запомнить - это как создать метку (label) и изменить её.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let information_label = Label::new(&quot;Specific Information: &quot;);
+let value = Label::new(&quot;Linux&quot;);
+value.set_label(&quot;Redox&quot;);
+
+let horizontal_box = Box::new(Orientation::Horizontal, 5);
+horizontal_box.pack_start(&amp;information_label, false, false, 0);
+horizontal_box.pack_start(&amp;value, true, false, 0);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtkbutton" id="gtkbutton">GtkButton</a></h2>
+<h3><a class="header" href="#Создание-кнопок" id="Создание-кнопок">Создание кнопок</a></h3>
+<p><strong>GtkButton</strong> - это простая кнопка, содержащая текстовую метку (label) и/или изображения для представления действия, которое должно быть выполнено при нажатии кнопки.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let text_button = Button::new_with_label(&quot;Ok&quot;);
+let image_button = Button::new_from_icon_name(&quot;имя-иконки&quot;, 32);
+#}</code></pre></pre>
+<h3><a class="header" href="#Дизайн-кнопок" id="Дизайн-кнопок">Дизайн кнопок</a></h3>
+<p>Виджеты в GTK можно оформить так, чтобы они отличались от других виджетов в пользовательском интерфейсе (UI). В частности, кнопки поддерживают два класса стилей: destructive-action и suggested-action. Если в вашем UI есть особенная кнопка, которая должна отличаться, вы можете установить её так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Добавьте соответствующие классы стилей к этим кнопкам.
+delete_button.get_style_context().map(|c| c.add_class(&quot;destructive-action&quot;));
+new_button.get_style_context().map(|c| c.add_class(&quot;suggested-action&quot;));
+#}</code></pre></pre>
+<p>Каждый <strong>GtkWidget</strong> предоставляет метод <strong>get_style_context()</strong>, который возвращает
+<strong>Option<StyleContext></strong>, тем самым предоставляя метод <strong>add_class()</strong>, который используется чтобы установить класс стиля. Понимаете это? Хорошо. Наиболее важные классы кнопок, которые нужно знать - это <code>destructive-action</code> и <code>suggested-action</code>. Как правило, destructive action окрашивает кнопку в красный цвет, между тем, suggested action использует синий цвет. Актуальный цвет будет зависеть от того, какая тема GTK используется вами.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../pages/3/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../pages/3/state.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../pages/3/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../pages/3/state.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-9', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

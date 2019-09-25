@@ -1,0 +1,2696 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Gtk-Rust by Example</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="theme/outdated.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="pages/1/index.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="pages/2/hello_world.html"><strong aria-hidden="true">2.</strong> Hello World</a></li><li><a href="pages/3/index.html"><strong aria-hidden="true">3.</strong> Боксирующие кнопки</a></li><li><ol class="section"><li><a href="pages/3/objects.html"><strong aria-hidden="true">3.1.</strong> Упаковки, кнопки и метки</a></li><li><a href="pages/3/state.html"><strong aria-hidden="true">3.2.</strong> Сопровождение внешнего состояния</a></li><li><a href="pages/3/ui.html"><strong aria-hidden="true">3.3.</strong> Создание структуры UI</a></li><li><a href="pages/3/programming.html"><strong aria-hidden="true">3.4.</strong> Программирование UI</a></li><li><a href="pages/3/review.html"><strong aria-hidden="true">3.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="pages/4/index.html"><strong aria-hidden="true">4.</strong> Составитель статей из HTML</a></li><li><ol class="section"><li><a href="pages/4/entries.html"><strong aria-hidden="true">4.1.</strong> Поля, панели, прокручиваемые окна</a></li><li><a href="pages/4/horrorshow.html"><strong aria-hidden="true">4.2.</strong> HTML-шаблоны Horrorshow</a></li><li><a href="pages/4/structure.html"><strong aria-hidden="true">4.3.</strong> Создание структуры UI</a></li><li><a href="pages/4/programming.html"><strong aria-hidden="true">4.4.</strong> Программирование UI</a></li><li><a href="pages/4/concl.html"><strong aria-hidden="true">4.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="pages/5/index.html"><strong aria-hidden="true">5.</strong> Простой редактор Common Mark</a></li><li><ol class="section"><li><a href="pages/5/source_views.html"><strong aria-hidden="true">5.1.</strong> Выбор файла, просмотр кода и web-страниц</a></li><li><a href="pages/5/setting_modules.html"><strong aria-hidden="true">5.2.</strong> Настройка модулей</a></li><li><a href="pages/5/ui_misc_rs.html"><strong aria-hidden="true">5.3.</strong> Модуль ui/misc.rs</a></li><li><a href="pages/5/creating_ui_structure.html"><strong aria-hidden="true">5.4.</strong> Создание структуры пользовательского интерфейса</a></li><li><a href="pages/5/external_state.html"><strong aria-hidden="true">5.5.</strong> Работа с внешним состоянием</a></li><li><a href="pages/5/programming.html"><strong aria-hidden="true">5.6.</strong> Создание событий</a></li><li><a href="pages/5/markdown_to_html.html"><strong aria-hidden="true">5.7.</strong> Markdown в HTML</a></li><li><a href="pages/5/webviews.html"><strong aria-hidden="true">5.8.</strong> Обновление WebViews</a></li><li><a href="pages/5/file_choosers.html"><strong aria-hidden="true">5.9.</strong> Диалог выбора файла</a></li><li><a href="pages/5/programming_open_button.html"><strong aria-hidden="true">5.10.</strong> Программирование кнопки Open</a></li><li><a href="pages/5/programming_save_button.html"><strong aria-hidden="true">5.11.</strong> Программирование кнопки Save</a></li><li><a href="pages/5/binding_keys.html"><strong aria-hidden="true">5.12.</strong> Обработка сочетаний клавиш</a></li><li><a href="pages/5/review_conclusion.html"><strong aria-hidden="true">5.13.</strong> Обзор и подведение итогов</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Gtk-Rust by Example</h1>
+
+                        <div class="right-buttons">
+                            <a href="print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#gtk-rust-на-примерах" id="gtk-rust-на-примерах">Gtk-Rust на примерах</a></h1>
+<p>Gtk-Rust by Example (GRBE) представляет собой неофициальную книгу по разработке GTK GUI, на <a href="https://www.rust-lang.org/ru-RU/">языке программирования Rust</a>, которая будет демонстрировать практическое использование <a href="https://github.com/gtk-rs/gtk/">библиотеки GTK</a> на различных примерах.</p>
+<p>Перед тем как начать, укажите версию библиотеки в вашем <code>Cargo.toml</code> файле:</p>
+<pre><code>[dependencies.gtk]
+version = &quot;0.3.0&quot;
+features = [&quot;v3_22&quot;]
+</code></pre>
+<h1><a class="header" href="#Окно-с-панелью-заголовка" id="Окно-с-панелью-заголовка">Окно с панелью заголовка</a></h1>
+<img src="pages/2/img/2/hello_world.png" />
+<blockquote>
+<p>Исходный код программы для этой главы можно найти <a href="https://github.com/ruRust/gtk-rust-by-example/tree/master/src/source_code/hello_world">здесь</a>.</p>
+</blockquote>
+<p>В этой главе мы создадим простое GTK приложение с панелью заголовка. Этот пример познакомит Вас с основами создания структуры приложения, которое будет содержать виджет и окно с заголовком.</p>
+<h2><a class="header" href="#Создание-структуры-приложения" id="Создание-структуры-приложения">Создание структуры приложения</a></h2>
+<p>Следующая диаграмма показывает, как мы будет проектировать структуру для нашего GTK приложения.
+Можно и не следовать этой диаграмме для достижения главного результата, однако, проектирование структуры пользовательского интерфейса может быть полезной пищей для ума.</p>
+<img src="pages/2/img/2/diagram.png" />
+<p>В примере ниже, мы создадим структуру с <strong>GtkWindow</strong> и <strong>Header</strong>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+extern crate gtk;
+
+use gtk::*;
+
+// Объявим структуру `Application`.
+pub struct Application {
+    pub window: Window,
+    pub header: Header,
+}
+#}</code></pre></pre>
+<p><strong>Header</strong> - это еще одна структура, которая будет содержать <strong>GtkHeaderbar</strong> и все виджеты внутри этой панели заголовка.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Объявим структуру `Header`.
+pub struct Header {
+    pub container: HeaderBar,
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Создание-пользовательского-интерфейса-ui" id="Создание-пользовательского-интерфейса-ui">Создание пользовательского интерфейса (UI)</a></h2>
+<p>Далее, мы создадим интерфейс с помощью Rust и расположим его в &quot;ново-объявленных&quot; структурах.</p>
+<p>Во-первых, структура нашего приложения будет содержать в себе все другие структуры нашего пользовательского интерфейса. В примере ниже находится код с комментариями, описывающие каждый метод, который мы будем использовать для конфигурации.</p>
+<p>Мы создадим <strong>GtkWindow</strong> и &quot;присоединим&quot; каждый элемент UI. Структура <code>Header</code> будет располагать в себе другие <strong>GtkHeaderBar</strong>. Далее, напишем функцию для выхода из приложения.
+Важно также установить описание для окна и <code>wmclass</code>, который будет отображаться оконными менеджерами, а с помощью функции <code>Window::set_default_icon_name()</code> настроим отображаемую иконку.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Блок реализации.
+impl Application {
+    fn new() -&gt; Application {
+        // Создадим новое окно с типом `Toplevel`.
+        let window = Window::new(WindowType::Toplevel);
+        // Создадим панель заголовка и связанный с ним контент.
+        let header = Header::new();
+
+        // Укажем название заголовка виджета.
+        window.set_titlebar(&amp;header.container);
+        // Укажем название для окна приложения.
+        window.set_title(&quot;Простая программа&quot;);
+        // Установим класс для оконного менеджера.
+        window.set_wmclass(&quot;simple-gtk&quot;, &quot;Простая программа&quot;);
+        // Установим иконку, отображаемую приложением.
+        Window::set_default_icon_name(&quot;имя_иконки&quot;);
+
+        // Программа закроется, если нажата кнопка выхода.
+        window.connect_delete_event(move |_, _| {
+            main_quit();
+            Inhibit(false)
+        });
+
+        // Возвращаем основное состояние приложения.
+        Application { window, header }
+    }
+}
+#}</code></pre></pre>
+<p>Здесь располагается блок реализации для структуры <strong>Header</strong>, которая на данный момент содержит только <strong>GtkHeaderBar</strong>. Важно указать описание для этой панели заголовка, чтобы она отображалась, а также сделать активными элементы управления окном, поскольку они отключены по-умолчанию.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Header {
+    fn new() -&gt; Header {
+        // Создадим виджет контейнера для главной панели заголовка.
+        let container = HeaderBar::new();
+        // Установим отображаемый тект в секции для названия.
+        container.set_title(&quot;Simple GTK&quot;);
+        // Делаем активными элементы управления окна в этой панели.
+        container.set_show_close_button(true);
+
+        // Возвращаем заголовок и его состояние.
+        Header { container }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Инициализация-и-запуск-приложения" id="Инициализация-и-запуск-приложения">Инициализация и запуск приложения</a></h2>
+<p>Теперь, когда мы готовы, нам нужно просто инициализировать GTK, создать структуру приложения, показать все виджеты внутри этой структуры и запустить главный цикл событий GTK.</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // Инициализация GTK.
+    if gtk::init().is_err() {
+        eprintln!(&quot;Не удалось инициализировать GTK приложение.&quot;);
+        return;
+    }
+
+    // Инициализация начального состояния UI.
+    let app = Application::new();
+
+    // Делаем видимыми все виджеты с UI.
+    app.window.show_all();
+
+    // Запуск основного цикла GTK.
+    gtk::main();
+}
+</code></pre></pre>
+<p>После того, как основной поток вошёл в цикл событий, он будет взаимодействовать с каждым вызванным виджетом для действий, например: метод <code>connect_delete_event()</code>, который мы использовали выше, чтобы запрограммировать кнопку выхода для закрытия программы.</p>
+<h2><a class="header" href="#Результат" id="Результат">Результат</a></h2>
+<p>После того, как вы написали код, соберите и запустите программу, которая выглядит вот так:</p>
+<pre><code class="language-bash">cargo build &amp;&amp; cargo run
+</code></pre>
+<img src="pages/2/img/2/hello_world.png" />
+<h1><a class="header" href="#Боксирующие-кнопки" id="Боксирующие-кнопки">Боксирующие кнопки</a></h1>
+<img src="pages/3/img/3/btn_boxer.png" />
+<blockquote>
+<p>Исходный код программы для этой главы можно найти <a href="https://github.com/ruRust/gtk-rust-by-example/tree/master/src/source_code/button_boxer">здесь</a>.</p>
+</blockquote>
+<p>В этом разделе мы рассмотрим, как структурировать ваш UI с помощью <code>упаковок</code> (box), изменять <code>метку</code> (label) и запрограммировать нажатие по кнопке. А также, к концу вы поймёте, как:</p>
+<ol>
+<li>Добавлять дочерние элементы в панель заголовка;</li>
+<li>Добавлять классы стилей к кнопке;</li>
+<li>Управлять состоянием приложения с помощью атомарных счётчиков <strong>Arc</strong> и выравнивать виджеты внутри контейнера.</li>
+</ol>
+<blockquote>
+<p>Напомним, что каждый GTK объект, который можно получить из контейнера <strong>gtk</strong> - заворачивают,
+так что не стоит беспокоится о правилах заимствования Rust. Объекты GTK считают ссылки, 
+поэтому, когда вам нужно передать GTK объект через несколько замыканий, вы можете
+сделать это с помощью клонирования новой ссылки.</p>
+</blockquote>
+<h2><a class="header" href="#Необходимые-знания" id="Необходимые-знания">Необходимые знания</a></h2>
+<p>Прежде чем продолжить изучение урока, убедитесь что вы понимаете что такое атомарность и атомарный счётчик ссылок (<strong>Arc</strong>). Эти понятия критически важны для возможности разделять состояние между несколькими замыканиями или потоками.
+Изучить этот вопрос можно в документации модулей <code>std::sync</code> и <code>std::sync::atomic</code>. Так же, вы можете ознакомиться с безблокировочной конкурентностью (lockless concurrency) <a href="https://assets.bitbashing.io/papers/lockless.pdf">в этом документе</a>.</p>
+<h1><a class="header" href="#Упаковки-кнопки-и-метки" id="Упаковки-кнопки-и-метки">Упаковки, кнопки и метки</a></h1>
+<p>Цель этого раздела заключается в том, чтобы дать объяснение объектам, которые будут использованы до того, как мы применим их на практике в следующих разделах.</p>
+<h2><a class="header" href="#gtkbox" id="gtkbox">GtkBox</a></h2>
+<p><strong>GtkBox</strong> является фактически эквивалентом UI вектора в Rust и должен быть объявлен с помощью <strong>Orientation</strong>, который определяет, что должны ли элементы быть выровнены слева направо или сверху вниз. Для тех, кто имеет опыт разработки с современным дизайном HTML5/CSS3, <strong>GtkBox</strong> эквивалентен гибким упаковкам -- они могут расширяться на всё пространство, а виджеты, содержащиеся внутри, тоже могут расширяться в соответствии с правилами, применяемыми при дочерней упаковке.</p>
+<h2><a class="header" href="#Создание-упаковки" id="Создание-упаковки">Создание упаковки</a></h2>
+<p>В следующем примере, мы создадим горизонтальную и вертикальную упаковку с нулевым отступом между дочерними элементами, содержащимися в упаковке. После создания упаковки, вы можете задать виджеты, используя метод <code>pack_*</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let padding_between_children = 0;
+let horizontal_box = Box::new(Orientation::Horizontal, padding_between_children);
+let vertical_box = Box::new(Orientation::Vertical, padding_between_children);
+#}</code></pre></pre>
+<h2><a class="header" href="#Упаковка-упаковки" id="Упаковка-упаковки">Упаковка упаковки</a></h2>
+<p>Вы могли заметить, что метод <code>pack_*</code> принимает большое количество параметров. Первым параметром должна быть ссылка на виджет, которую вы добавляете в контейнер. Вторым и третьим параметрами объявляют параметры заполнения соответственно. Последним параметром объявляют - как много единиц пространства должно быть между дочерними элементами в упаковке.</p>
+<blockquote>
+<p>To further elaborate on the expand and fill parameters, expand defines whether the
+given widget should attempt to use all of the extra space that it can. Each widget that has
+the expand parameter set will equally share that extra space. Meanwhile, fill defines whether
+the extra spaced should actually have that widget fill to cover that extra space, or should
+merely use that extra space as padding.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+health_info.pack_start(&amp;health_label, false, false, 5);
+health_info.pack_start(&amp;health, true, true, 5);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtklabel" id="gtklabel">GtkLabel</a></h2>
+<p><strong>GtkLabel</strong> - это простой виджет, который состоит исключительно из текста. Название говорит само за себя. Всё, что вам нужно запомнить - это как создать метку (label) и изменить её.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let information_label = Label::new(&quot;Specific Information: &quot;);
+let value = Label::new(&quot;Linux&quot;);
+value.set_label(&quot;Redox&quot;);
+
+let horizontal_box = Box::new(Orientation::Horizontal, 5);
+horizontal_box.pack_start(&amp;information_label, false, false, 0);
+horizontal_box.pack_start(&amp;value, true, false, 0);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtkbutton" id="gtkbutton">GtkButton</a></h2>
+<h3><a class="header" href="#Создание-кнопок" id="Создание-кнопок">Создание кнопок</a></h3>
+<p><strong>GtkButton</strong> - это простая кнопка, содержащая текстовую метку (label) и/или изображения для представления действия, которое должно быть выполнено при нажатии кнопки.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let text_button = Button::new_with_label(&quot;Ok&quot;);
+let image_button = Button::new_from_icon_name(&quot;имя-иконки&quot;, 32);
+#}</code></pre></pre>
+<h3><a class="header" href="#Дизайн-кнопок" id="Дизайн-кнопок">Дизайн кнопок</a></h3>
+<p>Виджеты в GTK можно оформить так, чтобы они отличались от других виджетов в пользовательском интерфейсе (UI). В частности, кнопки поддерживают два класса стилей: destructive-action и suggested-action. Если в вашем UI есть особенная кнопка, которая должна отличаться, вы можете установить её так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Добавьте соответствующие классы стилей к этим кнопкам.
+delete_button.get_style_context().map(|c| c.add_class(&quot;destructive-action&quot;));
+new_button.get_style_context().map(|c| c.add_class(&quot;suggested-action&quot;));
+#}</code></pre></pre>
+<p>Каждый <strong>GtkWidget</strong> предоставляет метод <strong>get_style_context()</strong>, который возвращает
+<strong>Option<StyleContext></strong>, тем самым предоставляя метод <strong>add_class()</strong>, который используется чтобы установить класс стиля. Понимаете это? Хорошо. Наиболее важные классы кнопок, которые нужно знать - это <code>destructive-action</code> и <code>suggested-action</code>. Как правило, destructive action окрашивает кнопку в красный цвет, между тем, suggested action использует синий цвет. Актуальный цвет будет зависеть от того, какая тема GTK используется вами.</p>
+<h1><a class="header" href="#Сопровождение-внешнего-состояния" id="Сопровождение-внешнего-состояния">Сопровождение внешнего состояния</a></h1>
+<p>В этой главе у нас будет некоторое состояние, которым мы будем управлять с помощью UI. Поэтому нам необходим способ хранения и загрузки значения из этого состояния. Программа, которую мы хотим написать, имеет один компонент: значение здоровья.</p>
+<p>Как оказалось, мы напрямую можем воспользоваться атомарными примитивами, таким как <strong>AtomicUsize</strong>, чтобы хранить значение для совместного использования нескольких неизменяемых замыканий. Этим атомарным значением можно управлять, не требуя изменяемого доступа к внутреннему значению. Таким образом, мы можем передавать неизменяемые ссылки на это значение и изменять его даже когда оно уже одолжено в нескольких местах одновременно.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct HealthComponent(AtomicUsize);
+#}</code></pre></pre>
+<p>Пока мы здесь, можем продолжить и написать некоторую логику для этой структуры в блоке реализации, используя следующие методы для здоровья:<code>initializing</code>,<code>subtracting</code> и <code>healing</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl HealthComponent {
+    fn new(initial: usize) -&gt; HealthComponent { HealthComponent(AtomicUsize::new(initial)) }
+
+    fn get_health(&amp;self) -&gt; usize { self.0.load(Ordering::SeqCst) }
+
+    fn subtract(&amp;self, value: usize) -&gt; usize {
+        let current = self.0.load(Ordering::SeqCst);
+        let new = if current &lt; value { 0 } else { current - value };
+        self.0.store(new, Ordering::SeqCst);
+        new
+    }
+
+    fn heal(&amp;self, value: usize) -&gt; usize {
+        let original = self.0.fetch_add(value, Ordering::SeqCst);
+        original + value
+    }
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Создание-структуры-пользовательского-интерфейса-ui" id="Создание-структуры-пользовательского-интерфейса-ui">Создание структуры пользовательского интерфейса (UI)</a></h1>
+<p>Используя структуру предыдущей главы в качестве образца, мы можем расширить её, чтобы включить новые элементы UI, которые будем использовать в нашей программе. Важно отметить, что необходимо хранить только те элементы, которые вы собираетесь запрограммировать позже, после создания структуры UI.</p>
+<p>В этой программе мы добавим два виджета <strong>GtkButtons</strong> к панели заголовка и воспользуемся вертикальным и горизонтальным элементом <strong>GtkBox</strong> с некоторыми метками (labels), чтобы отобразить информацию о текущем состоянии нашего приложения. Следующее изображение является нашей новой диаграммой структур.</p>
+<img src="pages/3/img/3/btn_diagram.png" />
+<p>Что означает следующее в Rust:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct App {
+    pub window:  Window,
+    pub header:  Header,
+    pub content: Content,
+}
+
+pub struct Header {
+    pub container: HeaderBar,
+    pub hit:       Button,
+    pub heal:      Button,
+}
+
+pub struct Content {
+    pub container: Box,
+    pub health:    Label,
+    pub message:   Label,
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Создание-структуры-app" id="Создание-структуры-app">Создание структуры App</a></h2>
+<p>Следуя последнему уроку, начнём с нашей структуры <strong>App</strong>. Метод <strong>new()</strong> должен принимать ссылку на <strong>&amp;HealthComponent</strong> в качестве вводимого значения в UI. Заметим, что мы добавили новую переменную <strong>content</strong> типа <strong>Context</strong>, которая принимает эту ссылку на health.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl App {
+    fn new(health: &amp;HealthComponent) -&gt; App {
+        // Создадим новое окно с типом `Toplevel`.
+        let window = Window::new(WindowType::Toplevel);
+        // Создадим заголовок и связанное с ним содержимое.
+        let header = Header::new();
+        // Расположим содержимое в окне.
+        let content = Content::new(health);
+
+        // Установим панель заголовка как описание виджета.
+        window.set_titlebar(&amp;header.container);
+        // Установим описание для окна.
+        window.set_title(&quot;Боксирующие кнопки&quot;);
+        // Установим класс для оконного менеджера.
+        window.set_wmclass(&quot;app-name&quot;, &quot;Боксирующие кнопки&quot;);
+        // Установим иконку, отображаемую приложением.
+        Window::set_default_icon_name(&quot;имя-иконки&quot;);
+        // Добавим коробку с содержимым в окно.
+        window.add(&amp;content.container);
+
+        // Запрограммируем выход из программы при нажатии кнопки.
+        window.connect_delete_event(move |_, _| {
+            main_quit();
+            Inhibit(false)
+        });
+
+        // Вернём состояние нашего приложения.
+        App {
+            window,
+            header,
+            content,
+        }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Создание-header" id="Создание-header">Создание Header</a></h2>
+<p>Затем мы так же реализуем метод для нашего заголовка, который должен содержать два элемента <strong>GtkButtons</strong> -- кнопка удара и лечения. Также обратите внимание, что мы устанавливаем некоторые классы стилей этим кнопкам, чтобы дать им более информативную визуальную способность.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Header {
+    fn new() -&gt; Header {
+        // Создадим главный заголовочный бар содержащий виджет.
+        let container = HeaderBar::new();
+
+        // Установим текст для отображения в секции для названия.
+        container.set_title(&quot;Боксирующие кнопки&quot;);
+        // Сделаем активными элементы управления окна в этой панели.
+        container.set_show_close_button(true);
+
+        // Создадим кнопки: `ударить` и `лечить`.
+        let hit = Button::new_with_label(&quot;Ударить&quot;);
+        let heal = Button::new_with_label(&quot;Лечить&quot;);
+
+        // Добавим соответствующие классы стилей к этим кнопкам.
+        hit.get_style_context()
+            .map(|c| c.add_class(&quot;destructive-action&quot;));
+        heal.get_style_context()
+            .map(|c| c.add_class(&quot;suggested-action&quot;));
+
+        // Теперь добавим их в панель заголовка.
+        container.pack_start(&amp;hit);
+        container.pack_end(&amp;heal);
+
+        // Вернём the header and all of it's state
+        Header {
+            container,
+            hit,
+            heal,
+        }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Создание-content" id="Создание-content">Создание Content</a></h2>
+<p>Теперь пришло время создать содержимое для нашего окна. При создании своего интерфейса (UI) с древовидной диаграммой, вы почти достигните <strong>GtkBoxes</strong>. При инициализации, эта упаковка должна быть указана с <strong>Horizontal</strong> или  <strong>Vertical</strong> ориентацией.</p>
+<p>Безусловно, вы достигните виджета <strong>GtkBoxes</strong> для настройки UI. Он может быть создан с <strong>Horizontal</strong> или <strong>Vertical</strong> выравниванием. В эти упаковки вы добавите все ваши виджеты, где они будут сложены в соответствии с выравниванием упаковки, к которой они присоединены.</p>
+<p>Мы должны создать вертикальную упаковку, которая содержит два дочерних элемента: вертикальный виджет <strong>GtkBox</strong> содержащий метку и значение, а затем ниже простой виджет <strong>GtkLabel</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Content {
+    fn new(health: &amp;HealthComponent) -&gt; Content {
+        // Создадим вертикальную упаковку, чтобы хранить там все дочерние элементы.
+        let container = Box::new(Orientation::Vertical, 0);
+
+        // Информация о здоровье будет храниться в горизонтальной упаковке вместе с вертикальной.
+        let health_info = Box::new(Orientation::Horizontal, 0);
+        let health_label = Label::new(&quot;Текущее значение здоровья:&quot;);
+        let health = Label::new(health.get_health().to_string().as_str());
+
+        // Установим горизонтальное выравнивание для наших объектов.
+        health_info.set_halign(Align::Center);
+        health_label.set_halign(Align::Start);
+        health.set_halign(Align::Start);
+
+        // Добивим информацию о здоровье в дочернюю коробку.
+        health_info.pack_start(&amp;health_label, false, false, 5);
+        health_info.pack_start(&amp;health, true, true, 5);
+
+        /*
+         *   Создадим метку, которая будет изменяться приложением
+         *   при выполнении удара или лечения.
+         */
+        let message = Label::new(&quot;Привет&quot;);
+
+        // Добавим все в нашу вертикальную коробку.
+        container.pack_start(&amp;health_info, true, false, 0);
+        container.pack_start(&amp;Separator::new(Orientation::Horizontal), false, false, 0);
+        container.pack_start(&amp;message, true, false, 0);
+
+        Content {
+            container,
+            health,
+            message,
+        }
+    }
+}
+#}</code></pre></pre>
+<h3><a class="header" href="#Устанавливаем-выравнивание" id="Устанавливаем-выравнивание">Устанавливаем выравнивание</a></h3>
+<p>Возможно, вы заметили, что приведённый код выше устанавливает горизонтальные выравнивания.
+По желанию, с помощью методов <code>set_halign()</code> и <code>set_valign()</code>, можно установить выравнивание для виджетов.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Установим горизонтальное выравнивание для наших объектов.
+health_info.set_halign(Align::Center);
+health_label.set_halign(Align::Start);
+health.set_halign(Align::Start);
+#}</code></pre></pre>
+<h1><a class="header" href="#Программирование-ui" id="Программирование-ui">Программирование UI</a></h1>
+<p>На этом этапе, мы сможем соединить всё вместе. Сначала мы установим стандартное значение здоровья для программы. Это значение будет использоваться для инициализации состояния структуры приложения. Затем, мы напишем код для кнопки удара и лечения, которые будут должны изменять значение содержимого в главном окне.</p>
+<h2><a class="header" href="#Перед-тем-как-мы-начнём" id="Перед-тем-как-мы-начнём">Перед тем, как мы начнём</a></h2>
+<p>В нашем распоряжении будет несколько строк, которые будут использованы в зависимости от действия. Это массив <strong>MESSAGES</strong>, к которому мы будем обращаться с помощью типажа с типом <strong>u8</strong>, который будет использован для получения индексов в массиве.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Заданные сообщения, которые будут использоваться в UI
+// при определённых условиях.
+const MESSAGES: [&amp;str; 3] = [&quot;Ой! Ты ударил меня!&quot;, &quot;...&quot;, &quot;Спасибо!&quot;];
+
+#[repr(u8)]
+// Типаж с типом `u8`, который используется как индекс в массиве `MESSAGES`.
+enum Message { Hit, Dead, Heal }
+#}</code></pre></pre>
+<p>Для тех, кто плохо разбирается в Rust, атрибут <code>#[repr(u8)]</code> определяет, что следующие элементы будут представлены типом <strong>u8</strong> в памяти. По умолчанию, варианты для типажей начинаются с нуля, поэтому <strong>Hit</strong> это <code>0</code>, тогда как <strong>Heal</strong> это <code>2</code>. Если вы хотите сделать это явным, вы можете написать это как:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[repr(u8)]
+enum Message { Hit = 0, Dead = 1, Heal = 2 }
+#}</code></pre></pre>
+<h2><a class="header" href="#Инициализация-компонента-health-и-структурирование-приложения" id="Инициализация-компонента-health-и-структурирование-приложения">Инициализация компонента Health и структурирование приложения</a></h2>
+<p>После инициализации GTK, мы можем создать наш компонент <code>health</code>, который будет обёрнут внутри атомарного счётчика (<strong>Arc</strong>). Если вы запомнили предыдущий код, то на самом деле внутреннее значение это <strong>AtomicUsize</strong>, который служит нашим счетчиком <code>health</code>. Это значение будет передаваться через несколько замыканий, следовательно требуется для счётчика ссылок.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let health = Arc::new(HealthComponent::new(10));
+#}</code></pre></pre>
+<p>Используя это значение, мы создадим структуру UI нашего приложения. Обратите внимание, что <code>&amp;health</code> автоматически ссылается как <strong>&amp;HealthComponent</strong>, даже если завёрнут в <strong>Arc</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let app = App::new(&amp;health);
+#}</code></pre></pre>
+<h2><a class="header" href="#Запрограммируем-кнопку-удара" id="Запрограммируем-кнопку-удара">Запрограммируем кнопку удара</a></h2>
+<p>Находясь здесь, всё что нам надо - это написать код наших виджетов. Именно здесь мы будем передавать оба компонента <code>health</code> и другие различные виджеты UI через замыкания. Начнём с кнопки лечения. Нам просто нужно сказать программе: &quot;Что произойдет при нажатии на кнопку&quot; ?
+Типаж <strong>ButtonExt</strong> предоставляет метод <strong>connect_clicked()</strong> именно для этого.</p>
+<blockquote>
+<p>Обратите внимание, что виджеты в GTK обычно проходят через их замыкания, поэтому, если
+вы хотите управлять вызовом виджета, вы можете сделать это используя выбранное значение
+через замыкание. Мы не нуждаемся в этой функциональности, поэтому просто проигнорируем
+значение.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+widget.connect_action(move |widget| {});
+#}</code></pre></pre>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+{
+    // Запрограммируем кнопку `Ударить` чтобы уменьшить здоровье.
+    let health = health.clone();
+    let message = app.content.message.clone();
+    let info = app.content.health.clone();
+    app.header.hit.clone().connect_clicked(move |_| {
+        let new_health = health.subtract(1);
+        let action = if new_health == 0 { Message::Dead } else { Message::Hit };
+        message.set_label(MESSAGES[action as usize]);
+        info.set_label(new_health.to_string().as_str());
+    });
+}
+#}</code></pre></pre>
+<p>В коде выше, мы создали анонимную область, чтобы мы могли содержать наши клонированные ссылки.
+Каждый вызов <strong>clone()</strong> просто увеличивает счётчик ссылок и делает значение доступным, чтобы использовать его еще раз позже.</p>
+<p>После вычитания из компонента health, если health равен <code>0</code>, то мы должны вернуть <strong>Message::Dead</strong>, иначе, сообщением будет <strong>MessageHit</strong>. После того, как мы овладели этой информацией, это просто вопрос обновления метки с новым значением.</p>
+<h2><a class="header" href="#Запрограммируем-кнопку-лечения" id="Запрограммируем-кнопку-лечения">Запрограммируем кнопку лечения</a></h2>
+<p>Это работает почти также, поэтому мы можем скопировать и вставить код выше, а затем изменить его, чтобы удовлетворить наши потребности.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+{
+    // Запрограммируем кнопку `Лечить`, чтобы вернуть очки здоровья.
+    let health = health.clone();
+    let message = app.content.message.clone();
+    let info = app.content.health.clone();
+    app.header.heal.clone().connect_clicked(move |_| {
+        let new_health = health.heal(5);
+        message.set_label(MESSAGES[Message::Heal as usize]);
+        info.set_label(new_health.to_string().as_str());
+    });
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#В-общей-сложности" id="В-общей-сложности">В общей сложности</a></h2>
+<p>После программирования UI, вы можете завершить код, выполнив следующее:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Сделаем все виджеты видимыми в UI.
+app.window.show_all();
+
+// Запуск основного цикла GTK.
+gtk::main();
+#}</code></pre></pre>
+<p>Ваш исходный код должен быть таким:</p>
+<pre><pre class="playpen"><code class="language-rust">// Заданные сообщения, которые будут использоваться в UI
+// при определённых условиях.
+const MESSAGES: [&amp;str; 3] = [&quot;Ouch! You hit me!&quot;, &quot;...&quot;, &quot;Thanks!&quot;];
+
+#[repr(u8)]
+// Типаж с типом `u8`, который используется как индекс в массиве `MESSAGES`.
+enum Message { Hit, Dead, Heal }
+
+fn main() {
+    // Инициализируем GTK перед продолжением.
+    if gtk::init().is_err() {
+        eprintln!(&quot;failed to initialize GTK Application&quot;);
+        process::exit(1);
+    }
+
+    /*  Установим начальное состояние для нашего компонента - `health`.
+     *   Воспользуемся `Arc`, для того, чтобы мы могли
+     *   использовать несколько programmable замыканий.
+     */
+    let health = Arc::new(HealthComponent::new(10));
+
+    // Инициализируем начальное состояние UI.
+    let app = App::new(&amp;health);
+
+    {
+        // Запрограммируем кнопку `Ударить` чтобы уменьшить здоровье.
+        let health = health.clone();
+        let message = app.content.message.clone();
+        let info = app.content.health.clone();
+        app.header.hit.clone().connect_clicked(move |_| {
+            let new_health = health.subtract(1);
+            let action = if new_health == 0 { Message::Dead } else { Message::Hit };
+            message.set_label(MESSAGES[action as usize]);
+            info.set_label(new_health.to_string().as_str());
+        });
+    }
+
+    {
+        // Запрограммируем кнопку `Лечить`, чтобы вернуть очки здоровья.
+        let health = health.clone();
+        let message = app.content.message.clone();
+        let info = app.content.health.clone();
+        app.header.heal.clone().connect_clicked(move |_| {
+            let new_health = health.heal(5);
+            message.set_label(MESSAGES[Message::Heal as usize]);
+            info.set_label(new_health.to_string().as_str());
+        });
+    }
+
+    // Сделаем все виджеты видимыми в UI.
+    app.window.show_all();
+
+    // Запуск основного цикла GTK.
+    gtk::main();
+}
+</code></pre></pre>
+<h2><a class="header" href="#Заключение-и-обзор" id="Заключение-и-обзор">Заключение и обзор</a></h2>
+<p>Если вы нажмёте на кнопку <code>Ударить</code>, счётчик должен уменьшиться и сообщение должно измениться. Нажатие по кнопке <code>Лечить</code> должно  увеличить счётчик и также изменить сообщение.После запуска вашей программы с помощью <code>cargo run</code>, вы должны увидеть окно, которое выглядит так:</p>
+<img src="pages/3/img/3/btn_boxer.png" />
+<p>На этом этапе, вы должны хорошо понимать как работают: <strong>GtkBox</strong>, <strong>GtkButton</strong> и <strong>GtkLabel</strong>. Вы можете вернуться к предыдущему разделу, чтобы ещё раз уточнить некоторые моменты.</p>
+<h2><a class="header" href="#Практическое-занятие" id="Практическое-занятие">Практическое занятие</a></h2>
+<h3><a class="header" href="#setting-inputs-w-buttons" id="setting-inputs-w-buttons">Setting Inputs w/ Buttons</a></h3>
+<p>There isn't much that you can do with just buttons and labels. If you want a practice challenge, try creating a program that displays a simple random math problem, and asks the user to use buttons to set the value. If they get it correct, modify a label to tell the user that what they entered was correct. This is an incredibly annoying interface design, so don't do this in the real world!
+Bonus: Timed Answers</p>
+<p>Do the same as the above, but also take advantage of <code>gtk::timeout_add()</code> to decrement and update a timer label within the UI until the timer reaches zero.</p>
+<h1><a class="header" href="#Составитель-статей-из-html" id="Составитель-статей-из-html">Составитель статей из HTML</a></h1>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch03_complete.png" alt="head_pic" /></p>
+<blockquote>
+<p>Исходный код для этой главы находится <a href="https://github.com/ruRust/gtk-rust-by-example/tree/master/src/source_code/html_article">здесь</a>.</p>
+</blockquote>
+<p>В данной главе вы начнете писать полезные программы, используя поля для ввода
+и просмотра текста, для того чтобы дать возможность пользователю вводить нужные
+значения в текстовые поля и генерировать выходные значения из введенных
+значений после нажатия на кнопку. В добавок вы познакомитесь с 
+макроопределением <code>html!</code>, который находится внутри пакета <em>horrorshow</em>. Вы
+будете писать программу, которая принимает введенные значения на левой панели
+и генерирует HTML на правом поле для просмотра текста.</p>
+<blockquote>
+<p>Обратите внимание на то что, что в данной главе мы не рассматриваем вопрос
+хранения данных во внешнем источнике, как это было в прошлой главе. Все состояние,
+которое нас интересует, находится внутри GTK объектов, с которыми мы будем
+взаимодействовать.</p>
+</blockquote>
+<h1><a class="header" href="#Поля-панели-прокручиваемые-окна-и-просмотр-текста" id="Поля-панели-прокручиваемые-окна-и-просмотр-текста">Поля, панели, прокручиваемые окна и просмотр текста</a></h1>
+<h2><a class="header" href="#gtkpaned" id="gtkpaned">GtkPaned</a></h2>
+<p>Это контейнеры, которые могут быть ориентированы вертикально или горизонтально,
+представляют собой два элемента, размер которых может изменяться.
+Размер этих двух элементов может быть изменен простым нажатием и перемещением
+разделяющей полосы между ними.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let container = Paned::new(Orientation::Horizontal);
+let left_widget = ...;
+let right_widget = ...;
+container.pack1(&amp;left_widget, true, true);
+container.pack2(&amp;right_widget, true, true);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtkentry" id="gtkentry">GtkEntry</a></h2>
+<p>Элементы позволяют пользовательскому интерфейсу принимать строку текста как
+входное значение, что может быть использовано другими виджетами для выполнения
+некоторых действий, используя данный текст как входные данные.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let entry = Entry::new();
+entry.set_text(&quot;Some Text&quot;);
+if let Some(text) = entry.get_text() {
+    println!(&quot;{}&quot;, text);
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#gtktextview" id="gtktextview">GtkTextView</a></h2>
+<p>Текстовые панели нужны для двух вещей:</p>
+<ul>
+<li>способность показывать многострочный текст</li>
+<li>возможность пользователю вводить многострочный текст
+Текстовая панель может быть настроена так, что ее содержимое нельзя
+редактировать, если есть такая необходимость. Также есть возможность
+настраивать работу с переносами текста. Текстовые панели не умеют работать
+с форматированным текстом, однако вполне могут быть использованы как
+редактор кода. Если вы хотите, чтобы текст был показан в виде HTML, смотрите
+<strong>GtkWebView</strong>, если же вы хотите получить редактор кода, смотрите
+<strong>GtkSourceView</strong>.</li>
+</ul>
+<blockquote>
+<p>Заметьте, что часто бывает лучше создать и привязать <strong>GtkTextBuffer</strong>
+к вашему текстовому полю вручную, чтобы получить указатель на буфер,
+который вы можете хранить, и избежать непрямого обращения, когда вы
+программируете ваш пользовательский интерфейс (UI). Имея указатель на буфер,
+можно легко получить доступ к тексту, который содержится в текстовой панели.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Буфер для текстовой панели с None в качестве параметра, потому что мы не
+// собираемся определять никаких текстовых тэгов для этого буфера.
+let text_buffer = TextBuffer::new(None);
+// После этого мы должны присвоить буфер новой текстовой панели, которая будет
+// самостоятельно обновлять себя при добавлении или удалении текста из буфера.
+let text_view = TextView::new_with_buffer(&amp;text_buffer);
+#}</code></pre></pre>
+<p>Извлечение текста из <strong>GtkTextBuffer</strong> требует некоторой сноровки, так что
+мы привели пример функции, которую вы можете использовать для того, чтобы
+получить содержимое буфера в виде строки (String). Вы можете указать
+определенный участок текста, который будет извлечен из буфера.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Получить все содержимое буфера в строковом представлении.
+fn get_buffer(buffer: &amp;TextBuffer) -&gt; Option&lt;String&gt; {
+    let start = buffer.get_start_iter();
+    let end = buffer.get_end_iter();
+    buffer.get_text(&amp;start, &amp;end, true)
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#gtkscrolledwindow" id="gtkscrolledwindow">GtkScrolledWindow</a></h2>
+<p>Это одноэлементные контейнеры которые предоставляют прокручиваемые окна внутри
+них. Часто бывает удобным сочетать их вместе с текстовыми полями, которые
+возможно прокручивать. Это как раз то, что мы хотим сделать в этой главе.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let scrolled_window = ScrolledWindow::new(None, None);
+scrolled_window.add(&amp;text_view);
+#}</code></pre></pre>
+<h1><a class="header" href="#horrorshow-html-шаблоны" id="horrorshow-html-шаблоны">Horrorshow HTML-шаблоны</a></h1>
+<p>Хотя это и не связано с разработкой c использованием GTK, пакет horrorshow
+предоставляет удобные макроопределения, которые дают возможность эффективно
+генерировать HTML-строки в памяти, используя DSL (<em>domain-specific language</em>)
+совместно с Rust, который может быть запущен посредством использования символа
+(<em>sigil</em>) <code>@</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[macro_use]
+extern crate horrorshow;
+use horrorshow::helper::doctype;
+
+let title = &quot;Title&quot;;
+let content = &quot;A string\nwith multiple\n\nlines&quot;;
+let html_string = format!(
+    &quot;{}&quot;,
+    html!{
+        : doctype::HTML,
+        html {
+            head {
+                style { : &quot;#style { }&quot; }
+            }
+            body {
+                h1(id=&quot;style&quot;) { : title }
+                @ for line in content.lines().filter(|x| !x.is_empty()) {
+                    p { : line }
+                }
+            }
+        }
+    }
+);
+#}</code></pre></pre>
+<h1><a class="header" href="#Создаем-структуру-ui" id="Создаем-структуру-ui">Создаем структуру UI</a></h1>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch03_complete.png" alt="head_pic" /></p>
+<p>Используя первую главу как шаблон и расширяя его, мы должны
+продумать дизайн пользовательского интерфейса согласно нашему
+видению UI, который представлен выше.</p>
+<p>Основные элементы интерфейса, которые стоит взять на заметку - это кнопка
+<strong>Post</strong> в заголовочной панели. Внутри нашего окна содержимым содержится
+элемент <strong>title</strong>, элемент <strong>tags</strong>, текстовая панель <strong>content</strong> и
+текстовая панель <strong>right_pane</strong> для отображения текста в виде HTML-разметки.
+Таким образом, структура нашего пользовательского интерфейса выглядит так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct App {
+    pub window: Window,
+    pub header: Header,
+    pub content: Content,
+}
+
+pub struct Header {
+    pub container: HeaderBar,
+    pub post: Button
+}
+
+pub struct Content {
+    pub container: Paned,
+    pub title: Entry,
+    pub tags: Entry,
+    pub content: TextBuffer,
+    pub right_pane: TextBuffer,
+}
+#}</code></pre></pre>
+<p>Заметьте, что контейнер для нашего содержимого будет расположен не в <strong>GtkBox</strong>,
+а в <strong>GtkPaned</strong>. Это позволит пользователю перемещать разграничительную полосу
+между панелями для того чтобы менять размер панелей по своему усмотрению.
+В добавок поля <strong>content</strong> и <strong>right_pane</strong> хранятся как <strong>GtkTextBuffer</strong>,
+а не как <strong>GtkTextViews</strong>. Это потому, что мы не будет программировать
+панели для просмотра, но будем использовать лежащие в их основе текстовые
+буферы, которые связаны с этими панелями.</p>
+<h2><a class="header" href="#Написание-программы" id="Написание-программы">Написание программы</a></h2>
+<p>Новым здесь будет то, что мы определим для окон размер по умолчанию, потому
+что мы должны иметь разумный размер, с которым пользователь будет
+взаимодействовать по умолчанию, чтобы пользователю не приходилось менять размер
+окна, чтобы удобнее обозревать его содержимое. Мы также изменяем заголовок на
+&quot;HTML Articler&quot;. Кроме этого, все остальное должно быть похоже на то, как вы
+разрабатываете другие приложения.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl App {
+    fn new() -&gt; App {
+        // Создадим новое окно верхнего уровня.
+        let window = Window::new(WindowType::Toplevel);
+        // Создадим заголовочную панель и связанное с ней содержимое.
+        let header = Header::new();
+        // Создадим элемент для хранения содержимого.
+        let content = Content::new();
+
+        // Сделаем заголовочную панель виджетом в панели с названием.
+        window.set_titlebar(&amp;header.container);
+        // Установим название окна.
+        window.set_title(&quot;HTML Articler&quot;);
+        // Установим управляющий класс для окна.
+        window.set_wmclass(&quot;html-articler&quot;, &quot;HTML Articler&quot;);
+        // Иконка, которую программа будет показывать.
+        Window::set_default_icon_name(&quot;iconname&quot;);
+        // Установить размер окна по умолчанию.
+        window.set_default_size(800, 600);
+        // Добавим содержимое в окно.
+        window.add(&amp;content.container);
+
+        // Запрограммируем, что делать, когда нажата кнопка выхода.
+        window.connect_delete_event(move |_, _| {
+            main_quit();
+            Inhibit(false)
+        });
+
+        // Возвратим главное состояние приложения.
+        App { window, header, content }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-заголовка" id="Реализация-заголовка">Реализация заголовка</a></h2>
+<p>Наша заголовочная панель будет иметь кнопку с надписью <strong>Post</strong>, которая
+получит <em>CSS</em>-стиль 'suggested-action' и будет расположена в конце панели.
+Название заголовочной панели должна совпадать с именем нашего приложения.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Header {
+    fn new() -&gt; Header {
+        // Создает контейнер для хранения виджета - заголовочной панели.
+        let container = HeaderBar::new();
+
+        // Устанавливает текст для показа в области названия в заголовочной панели.
+        container.set_title(&quot;HTML Articler&quot;);
+        // Установим элементы управления в области заголовочной панели.
+        container.set_show_close_button(true);
+
+        // Создадим кнопку, которая будет выводить HTML-статью.
+        let post = Button::new_with_label(&quot;Post&quot;);
+        post.get_style_context().map(|x| x.add_class(&quot;suggested-action&quot;));
+
+        container.pack_end(&amp;post);
+
+        // Возвратим заголовок и все его состояние.
+        Header { container, post }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-содержимого" id="Реализация-содержимого">Реализация содержимого</a></h2>
+<p>Это то место, где мы будет тратить большую часть нашего времени, находясь
+в приложении. Во-первых, создадим контейнер <strong>GtkPaned</strong>, который будет
+содержать левую и правую панели, размер которых изменяем. Нашей правой панелью
+будет <strong>GtkTextView</strong>, а правой будет вертикальный <strong>GtkBox</strong>. Заметьте,
+мы заинтересованы в том, чтобы получить прямой доступ к тексту внутри буфера
+панели для просмотра, так что буфер мы инициализируем перед созданием панели.
+Контейнер левой панели будет содержать отступ в <code>5</code> условных единицах,
+чтобы они не слеплялись вместе.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Главный контейнер будет содержать левую и правую панели. Левая панели
+// предназначена для пользовательского ввода, в то время как правая
+// предназначена для показа сгенерированных выходных данных.
+let container = Paned::new(Orientation::Horizontal);
+let left_pane = Box::new(Orientation::Vertical, 5);
+let right_pane = TextBuffer::new(None);
+let right_pane_view = TextView::new_with_buffer(&amp;right_pane);
+#}</code></pre></pre>
+<p>После этого мы создаем элементы <strong>title</strong> и <strong>tags</strong>, в добавок создадим
+панель <strong>content</strong>, которую мы будем использовать для построения левой панели.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Левая панель будет состоять из заголовка, элемента с тэгами и текстовой
+// панели для просмотра содержимого.
+let title = Entry::new();
+let tags = Entry::new();
+let content = TextBuffer::new(None);
+let content_view = TextView::new_with_buffer(&amp;content);
+#}</code></pre></pre>
+<p>Заметьте, мы также должны хранить размещенную по центру надпись над текстовой
+панелью <strong>content</strong>, после которой мы добавим немного заполняющего текста
+в элементах, и пояснительные подсказки, которые будут показываться, при наведении
+мыши на элементы.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Метка, которую мы будет показывать над элементом с содержимым
+// для его описания.
+let content_label = Label::new(&quot;Content&quot;);
+content_label.set_halign(Align::Center);
+
+// Показывать пользователю текстовые подсказки в полях для ввода. 
+title.set_placeholder_text(&quot;Insert Title&quot;);
+tags.set_placeholder_text(&quot;Insert Colon-Delimited Tags&quot;);
+
+// Показывать всплывающие подсказки пользователю, которые будут
+// проявляться при наведении мыши.
+title.set_tooltip_text(&quot;Insert the title of article here&quot;);
+tags.set_tooltip_markup(&quot;&lt;b&gt;tag_one&lt;/b&gt;:&lt;b&gt;tag two&lt;/b&gt;:&lt;b&gt; tag three&lt;/b&gt;&quot;);
+#}</code></pre></pre>
+<p>После этого сделаем так, чтобы текстовое поле на правой панели не разрешало
+редактирование, и оба текстовых поля должны содержать в себе текст, в которым
+переносы произведены по словам (а не по слогам).</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Правая панель не должна разрешать изменять ее содержимое, и оба редактора
+// должны производить перенос по целым словам (а не по слогам).
+right_pane_view.set_editable(false);
+right_pane_view.set_wrap_mode(WrapMode::Word);
+content_view.set_wrap_mode(WrapMode::Word);
+#}</code></pre></pre>
+<p>Сейчас мы должны переносить текстовые поля внутри <strong>GtkScrolledWindows</strong> для
+того, чтобы позволить пользователю прокручивать текст, на тот случай, если
+имеется больше текста, чем доступно места для просмотра внутри элемента.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Произвести необходимые переносы текста в прокручиваемых окнах.
+let content_scroller = ScrolledWindow::new(None, None);
+let right_pane_scrolled = ScrolledWindow::new(None, None);
+content_scroller.add(&amp;content_view);
+right_pane_scrolled.add(&amp;right_pane_view);
+#}</code></pre></pre>
+<p>Для того, чтобы улучшить пользовательский интерфейс, мы можем добавить поля и
+границы.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Настраиваем поля.
+left_pane.set_border_width(5);
+right_pane_view.set_left_margin(5);
+right_pane_view.set_right_margin(5);
+right_pane_view.set_top_margin(5);
+right_pane_view.set_bottom_margin(5);
+content_view.set_left_margin(5);
+content_view.set_right_margin(5);
+content_view.set_top_margin(5);
+content_view.set_bottom_margin(5);
+#}</code></pre></pre>
+<p>И все, что остается - поместить элементы внутри соответствующих панелей
+и вернуть структуру <strong>Content</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Сначала добавим все в левую панель.
+left_pane.pack_start(&amp;title, false, true, 0);
+left_pane.pack_start(&amp;tags, false, true, 0);
+left_pane.pack_start(&amp;content_label, false, false, 0);
+left_pane.pack_start(&amp;content_scroller, true, true, 0);
+
+// После этого добавьте правую и левую панели в контейнер.
+container.pack1(&amp;left_pane, true, true);
+container.pack2(&amp;right_pane_scrolled, true, true);
+
+Content { container, title, tags, content, right_pane }
+#}</code></pre></pre>
+<p>Собирая все вместе, мы должны получить следующую реализацию:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Content {
+    fn new() -&gt; Content {
+        // Главный контейнер будет содержать левую и правую панели. Левая панель
+        // предназначена для пользовательского ввода, а левая панель
+        // предназначена для сгенерированных данных.
+        let container = Paned::new(Orientation::Horizontal);
+        let left_pane = Box::new(Orientation::Vertical, 5);
+        let right_pane = TextBuffer::new(None);
+        let right_pane_view = TextView::new_with_buffer(&amp;right_pane);
+
+        //Левая панель будет состоять из заголовка, элементов с тэгами и
+        // текстовой панели для просмотра содержимого.
+        let title = Entry::new();
+        let tags = Entry::new();
+        let content = TextBuffer::new(None);
+        let content_view = TextView::new_with_buffer(&amp;content);
+
+        // Метка, которую мы будем показывать над содержимым для его описания.
+        let content_label = Label::new(&quot;Content&quot;);
+        content_label.set_halign(Align::Center);
+
+        // Показывать пользователю текстовые подсказки в полях для ввода.
+        title.set_placeholder_text(&quot;Insert Title&quot;);
+        tags.set_placeholder_text(&quot;Insert Colon-Delimited Tags&quot;);
+
+        // Показывать всплывающие подсказки пользователю, которые будут
+        // проявляться при наведении мыши.
+        title.set_tooltip_text(&quot;Insert the title of article here&quot;);
+        tags.set_tooltip_markup(&quot;&lt;b&gt;tag_one&lt;/b&gt;:&lt;b&gt;tag two&lt;/b&gt;:&lt;b&gt; tag three&lt;/b&gt;&quot;);
+
+        // Правая панель не должна разрешать изменять ее содержимое, и оба редактора
+        // должны производить перенос по целым словам (а не по слогам).
+        right_pane_view.set_editable(false);
+        right_pane_view.set_wrap_mode(WrapMode::Word);
+        content_view.set_wrap_mode(WrapMode::Word);
+
+        // Произвести необходимые переносы текста в прокручиваемых окнах.
+        let content_scroller = ScrolledWindow::new(None, None);
+        let right_pane_scrolled = ScrolledWindow::new(None, None);
+        content_scroller.add(&amp;content_view);
+        right_pane_scrolled.add(&amp;right_pane_view);
+
+        // Настраиваем отступы.
+        left_pane.set_border_width(5);
+        right_pane_view.set_left_margin(5);
+        right_pane_view.set_right_margin(5);
+        right_pane_view.set_top_margin(5);
+        right_pane_view.set_bottom_margin(5);
+        content_view.set_left_margin(5);
+        content_view.set_right_margin(5);
+        content_view.set_top_margin(5);
+        content_view.set_bottom_margin(5);
+
+        // Сначала добавим все в левую панель.
+        left_pane.pack_start(&amp;title, false, true, 0);
+        left_pane.pack_start(&amp;tags, false, true, 0);
+        left_pane.pack_start(&amp;content_label, false, false, 0);
+        left_pane.pack_start(&amp;content_scroller, true, true, 0);
+
+        // После этого добавьте правую и левую панели в контейнер.
+        container.pack1(&amp;left_pane, true, true);
+        container.pack2(&amp;right_pane_scrolled, true, true);
+
+        Content { container, title, tags, content, right_pane }
+    }
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Программирование-ui-1" id="Программирование-ui-1">Программирование UI</a></h1>
+<p>Теперь, когда имеются виджеты, которые должны взаимодействовать друг с другом,
+вы можете подумать, что данная часть является небольшой, но сложной в реализации.
+Если вы так думаете, то вы полностью ошибаетесь, потому что данная часть будет
+самой легкой частью программы для реализации. Начнем с функции <code>main</code>, которую
+мы возьмем из первой главы в качестве шаблона.</p>
+<pre><pre class="playpen"><code class="language-rust">fn main() {
+    // Инициализация GTK перед началом работы.
+    if gtk::init().is_err() {
+        eprintln!(&quot;failed to initialize GTK Application&quot;);
+        process::exit(1);
+    }
+
+    // Инициализация начального состояния пользовательского интерфейса.
+    let app = App::new();
+
+    // Напишите код работы ваших виджетов здесь.
+
+    // Сделать видимыми все виджеты пользовательского интерфейса
+    app.window.show_all();
+
+   // Запустим главный цикл событий (_event loop_) GTK.
+    gtk::main();
+}
+</code></pre></pre>
+<p>Мы запрограммируем кнопку <strong>Post</strong> так, чтобы она принимала элементы <strong>title</strong>
+и <strong>tags</strong>, также как и буфер текстовой панели <strong>content</strong>. Далее мы пропустим
+строки из этих виджетов через HTML-макроопределение <em>horrorshow</em> и напишем
+получившийся результат в текстовый буфер <strong>right_pane</strong>. Код для программирования
+кнопки выглядит так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+{
+    // Программирование кнопки **Post** на принятие входных значений из
+    // левой панели, произведение необходимого обновление HTML-кода на
+    // правой панели. Подготовка к увеличение значения счетчиков...
+    let title = app.content.title.clone();
+    let tags = app.content.tags.clone();
+    let content = app.content.content.clone();
+    let right_pane = app.content.right_pane.clone();
+    app.header.post.connect_clicked(move |_| {
+        let inputs = (title.get_text(), tags.get_text(), get_buffer(&amp;content));
+        if let (Some(title), Some(tags), Some(content)) = inputs {
+            right_pane.set_text(&amp;generate_html(&amp;title, &amp;tags, &amp;content));
+        }
+    });
+}
+#}</code></pre></pre>
+<p>Заметьте, получить текста из элемента очень просто. Для этого нужно всего лишь
+вызвать метод <strong>get_text()</strong>, который возвращает <strong>Option<String></strong>. Получение
+текста из текстового буфера немного сложнее, поэтому вам необходимо использовать
+функцию, которая была рекомендована в начале этой главы. Эта функция написана так:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Получить содержимое текстового буфера в виде строки.
+fn get_buffer(buffer: &amp;TextBuffer) -&gt; Option&lt;String&gt; {
+    let start = buffer.get_start_iter();
+    let end = buffer.get_end_iter();
+    buffer.get_text(&amp;start, &amp;end, true)
+}
+#}</code></pre></pre>
+<p>Вы также заметите интересный шаблон проектирования (паттерн) в Rust, которая
+сильно упростила нам проверку наличия всех входных данных при получение входных
+данных, все это произошло перед тем как что-то сделали с входными значениями.
+Синтаксис <strong>if let</strong> в Rust работает не только с шаблонами (паттернами),
+но и с кортежами (<em>tuple</em>), так что вы можете проверять несколько входных
+данных в кортеже одновременно, так же, как вы бы делали это в <strong>match</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let inputs = (title.get_text(), tags.get_text(), get_buffer(&amp;content));
+if let (Some(title), Some(tags), Some(content)) = inputs {
+    right_pane.set_text(&amp;generate_html(&amp;title, &amp;tags, &amp;content));
+}
+#}</code></pre></pre>
+<p>Нам еще предстоит определить функцию <strong>generate_html</strong>, и это будет
+завершающей частью реализации приложения. Самым простым способом
+использования макроопределения <strong>html!</strong> является его подстановка в качестве
+аргумента в макроопределение <strong>format!</strong>. Наша функция будет выглядеть так,
+хотя вы вольны реализовать HTML-макроопределение по своему усмотрению.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Генерирует HTML, который будет показан на правой панели.
+fn generate_html(title: &amp;str, tags: &amp;str, content: &amp;str) -&gt; String {
+    format!{
+        &quot;{}&quot;,
+        html!{
+            article {
+                header {
+                    h1 { : &amp;title }
+                    div(class=&quot;tags&quot;) {
+                        @ for tag in tags.split(':') {
+                            div(class=&quot;tag&quot;) { : tag }
+                        }
+                    }
+                }
+                @ for line in content.lines().filter(|x| !x.is_empty()) {
+                    p { : line }
+                }
+            }
+        }
+    }
+}
+#}</code></pre></pre>
+<p>Синтаксис приведенного выше кода должен быть довольно читаемым. Мы создаем
+пару тэгов <strong>article</strong>, которая содержит в себе пару тэгов <strong>header</strong> и
+параграф <strong>p</strong> для каждой непустой линии из входных данных, полученных из
+текстового буфера <strong>content</strong>. Внутри тэгов <strong>header</strong> есть заголовок <strong>h1</strong>,
+который использует текст из поля для ввода названия как свой текст. Также там
+есть элемент <strong>div</strong>, который содержит список тэгов, разделенных двоеточиями.
+<img src="https://mmstick.github.io/gtkrs-tutorials/images/ch03_complete.png" alt="head_pic" /></p>
+<p>Имея все это на своих местах, у вас должна получиться работающая программа,
+выглядящая как на изображении. </p>
+<h1><a class="header" href="#Заключение-и-обзор-1" id="Заключение-и-обзор-1">Заключение и обзор</a></h1>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch03_complete.png" alt="head_pic" /></p>
+<p>К данному времени у вас должно сложиться хорошее представление о том, как писать
+программы с использованием библиотеки GTK на Rust. К текущему моменту вы должны
+знать, как делать следующее:</p>
+<ul>
+<li>создавать, получать, присваивать значения объектам <strong>Label</strong></li>
+<li>создавать, получать, присваивать значения объектам <strong>Entries</strong></li>
+<li>создавать, получать, присваивать значения объектам <strong>TextBuffer</strong></li>
+<li>создавать, присваивать буферы объектам <strong>TextViews</strong></li>
+<li>создавать, настраивать стили внешнего вида, программировать объекты <strong>Button</strong></li>
+<li>присваивать элементы объектам <strong>Box</strong> и контейнерам <strong>Paned</strong></li>
+<li>устанавливать отступы и поля на виджетах</li>
+<li>работать с внешним состоянием</li>
+</ul>
+<h2><a class="header" href="#Практические-задачи" id="Практические-задачи">Практические задачи</a></h2>
+<h1><a class="header" href="#Простой-редактор-common-mark" id="Простой-редактор-common-mark">Простой редактор Common Mark</a></h1>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch04_complete.png" alt="head_pic" /></p>
+<blockquote>
+<p>Исходный код для этой главы находится <a href="https://github.com/ruRust/gtk-rust-by-example/tree/master/src/source_code/simple_editor_common_mark">здесь</a>.</p>
+</blockquote>
+<p>В данной главе мы создадим полезную программу для редактирования текста с
+синтаксисом Markdown, в частности, версии Common Mark, и покажем этот текст
+в реальном времени, с помощью предпросмотра HTML.</p>
+<p>Мы также будем использовать окно для открытия и сохранения файлов,
+будем хэшировать буфер, чтобы знать, когда кнопка Save должна быть
+активирована. Когда это будет завершено, вы должны будете понимать не только
+как использовать пакет <strong>gtk</strong>, но и <strong>gdk</strong>, <strong>pango</strong>, <strong>webkit2gtk</strong>,
+<strong>sourceview</strong>.</p>
+<blockquote>
+<p>Эта глава была написана использованием готовой программы, которую мы
+собираемся собрать. Можно сказать, что это обучающее пособие реализует само
+себя.</p>
+</blockquote>
+<blockquote>
+<p>HTML можно писать внутри данного диалекта Markdown. Это позволяет смешивать
+HTML и Markdown в одном редакторе, отображение будет показываться справа.</p>
+</blockquote>
+<h2><a class="header" href="#Исходные-требования" id="Исходные-требования">Исходные требования</a></h2>
+<p>Очень полезно знать, как использовать типы <strong>RwLock</strong> и <strong>Mutex</strong> перед тем
+как продвигаться дальше, так как данные типы будут использоваться для работы с
+внешним состоянием. Это позволит переменным быть заимствованными по изменяемой
+ссылке в нескольких потоках и замыканиях, тогда как в другом случае эти
+переменные были бы неизменяемыми.</p>
+<h2><a class="header" href="#Зависимости" id="Зависимости">Зависимости</a></h2>
+<p>Ваши зависимости должны быть следующими:</p>
+<pre><code class="language-toml">[dependencies]
+gdk = &quot;0.6&quot;
+horrorshow = &quot;0.6.2&quot;
+pango = &quot;0.2.0&quot;
+pulldown-cmark = &quot;0.1.0&quot;
+tiny-keccak = &quot;1.4.0&quot;
+webkit2gtk = &quot;0.2&quot;
+
+[dependencies.sourceview]
+features = [&quot;v3_18&quot;]
+version = &quot;0.2&quot;
+
+[dependencies.gtk]
+features = [&quot;v3_22&quot;]
+version = &quot;0.2&quot;
+</code></pre>
+<h3><a class="header" href="#puldown-cmark" id="puldown-cmark">puldown-cmark</a></h3>
+<p>Кто-то может заметить, что мы добавили новые пакеты. В Google можно узнать
+про пакет <a href="https://github.com/google/pulldown-cmark">pulldown-cmark</a>, который предоставляет хороший парсер CommonMark
+и поэтому дает возможность преобразовывать Markdown в HTML.</p>
+<h3><a class="header" href="#tiny-keccak" id="tiny-keccak">tiny-keccak</a></h3>
+<p>Мы будем использовать алгоритм хеширования для того, чтобы делать кнопку Save
+активной или неактивной. Проще говоря, мы будем хешировать буфер при каждом
+нажатии клавиш и сравнивать полученный хеш с сохраненным. Если хеши совпадают,
+то кнопка Save должна быть активной, иначе - неактивной.</p>
+<h3><a class="header" href="#sourceview" id="sourceview">sourceview</a></h3>
+<p>Благодаря этому пакету у нас появится доступ к виджету <strong>GtkSourceView</strong>,
+который мы будем использовать для создания редактора кода, используемом для
+редактирования Markdown.</p>
+<h3><a class="header" href="#webkit2gtk" id="webkit2gtk">webkit2gtk</a></h3>
+<p>Благодаря этому пакету у нас появится виджет <strong>GtkWebView</strong>, который
+будет показывать &quot;живое&quot; представление нашего редактируемого Markdown.</p>
+<h3><a class="header" href="#pango" id="pango">pango</a></h3>
+<p>Благодаря этому пакету мы сможем изменять шрифт в <strong>GtkSourceView</strong>.</p>
+<h3><a class="header" href="#gdk" id="gdk">gdk</a></h3>
+<p>Мы будем использовать его для обработки некоторых нажатий клавиш.</p>
+<h1><a class="header" href="#Выбор-файла-просмотр-кода-и-web-страниц" id="Выбор-файла-просмотр-кода-и-web-страниц">Выбор файла, просмотр кода и web-страниц</a></h1>
+<h2><a class="header" href="#gtkwebview" id="gtkwebview">GtkWebView</a></h2>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/web_view.png" alt="pic_gtkwebview" /></p>
+<p>Этот виджет, предоставляемый [webkit2gtk][], который содержит прокручиваемое
+окно и предоставляет встроенный web-движок для рендеринга HTML. Данный элемент
+нужен для показа отрендеренного HTML, полученного из текста Markdown в буфере.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let context = WebContext::get_default().unwrap();
+let webview = WebView::new_with_context(&amp;context);
+#}</code></pre></pre>
+<p>Мы поместим HTML, который получен посредством использования пакета horrowshow,
+в web-панель напрямую, с помощью метода <code>load_html()</code>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+webview.load_html(&amp;html, None);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtksourceview" id="gtksourceview">GtkSourceView</a></h2>
+<p>![pic_gtkwebview]: https://mmstick.github.io/gtkrs-tutorials/images/source_view.png
+Это предоставляемый нам усовершенствованный <strong>GtkTextView</strong>. Однако не
+ожидайте слишком многого от него, потому что на текущий момент он достаточно
+примитивен.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let source_buffer = Buffer::new(None);
+let source_view = View::new_with_buffer(&amp;source_buffer);
+#}</code></pre></pre>
+<p>Настройки по умолчанию не отличаются от соответствующих настроек <strong>GtkTextView</strong>,
+поэтому вам нужно будет самостоятельно настроить виджет.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+source_view.set_show_line_numbers(true);
+source_view.set_monospace(true);
+let font = FontDescription::from_string(&quot;monospace 11&quot;);
+WidgetExt::override_font(&amp;source_view, &amp;font);
+#}</code></pre></pre>
+<h2><a class="header" href="#gtkfilechooserdialog" id="gtkfilechooserdialog">GtkFileChooserDialog</a></h2>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/file_chooser_dialog.png" alt="pic_GtkFileChooserDialog" />
+<strong>GtkFileChooserDialogs</strong> будет использоваться для программирования поведения
+кнопок для открытия/закрытия/сохранения файлов. Они будут открывать окно, где
+вы сможете выбрать файл. Важный момент: <strong>GtkFileChooserDialogs</strong> не
+использует возможности типажа <strong>Drop</strong>. Но беспокоиться не стоит, все нужное
+мы реализуем самостоятельно.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Создать новое диалоговое окно выбора файла для открытия.
+let open_dialog = FileChooserDialog::new(
+    Some(&quot;Open&quot;),
+    Some(&amp;Window::new(WindowType::Popup)),
+    FileChooserAction::Open,
+);
+
+// Добавить кнопки **Cancel**, **Save** в это диалоговое окно.
+open_dialog.add_button(&quot;Cancel&quot;, ResponseType::Cancel.into());
+open_dialog.add_button(&quot;Open&quot;, ResponseType::Ok.into());
+
+// Открыть созданное диалоговое окно и принять полученный результат.
+if open_dialog.run() == ResponseType::Ok.into() {
+    if let Some(filename) = open_dialog.get_filename() {
+        // Сделать что-то с полученным `PathBuf`.
+    }
+}
+
+// Уничтожить диалоговое окно. Будьте внимательны: не возвращайтесь из
+// функции, не уничтожив прежде диалоговое окно.
+open_dialog.destroy();
+#}</code></pre></pre>
+<h1><a class="header" href="#Настройка-модулей" id="Настройка-модулей">Настройка модулей</a></h1>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch04_mod_diagram.png" alt="head_pic" /></p>
+<p>В данной главе мы начнем использовать модули, чтобы разделить код на отдельные
+части. Следуя приведенной выше диаграмме мы отделим GTK-специфичную часть кода
+от остального кода.</p>
+<ul>
+<li>модуль <strong>ui</strong> будет содержать весь код, относящийся к построению и выполнению
+GTK-программы.</li>
+<li>модуль <strong>preview</strong> генерирует HTML из предоставленного Markdown.</li>
+<li>модуль <strong>state</strong> содержит типы, которые используются для работы с внешним
+состоянием.</li>
+</ul>
+<h2><a class="header" href="#Создание-модулей" id="Создание-модулей">Создание модулей</a></h2>
+<p><img src="https://mmstick.github.io/gtkrs-tutorials/images/ch04_mod_structure.png" alt="creating_modules" /></p>
+<p>Модули <strong>preview</strong> и <strong>state</strong> относительно простые, они могут быть
+представлены двумя Rust-файлами: <strong>preview.rs</strong> и <strong>state.rs</strong>. Модуль <strong>ui</strong>
+будет гораздо более сложным, содержа в себе подмодули. У нас будет директория
+<strong>ui</strong> где будет точка входа в модуль в виде файла <strong>mod.rs</strong> внутри
+директории.</p>
+<h2><a class="header" href="#Файл-mainrs" id="Файл-mainrs">Файл <strong>main.rs</strong></a></h2>
+<p>Как только мы настроим основные модули, мы свяжем всё воедино и соединим с
+главной точкой входа в программу - <strong>main.rs</strong>. Первоначальная версия будет
+выглядеть так:</p>
+<pre><pre class="playpen"><code class="language-rust">extern crate gdk;
+extern crate gtk;
+#[macro_use]
+extern crate horrorshow;
+extern crate pango;
+extern crate pulldown_cmark;
+extern crate sourceview;
+extern crate tiny_keccak;
+extern crate webkit2gtk;
+
+pub mod preview;
+pub mod state;
+pub mod ui;
+
+use ui::App;
+
+fn main() {
+    // Инициализировать исходное состояние пользовательского интерфейса.
+    App::new()
+        // &quot;Соединить&quot; события с пользовательским интерфейсом.
+        .connect_events()
+        // Показать пользовательский интерфейс и запустить программу.
+        .then_execute();
+}
+</code></pre></pre>
+<p>Вы можете заметить отличия от приведенного в прошлой главе кода. В этой главе
+мы будем использовать паттерн <strong>Builder</strong> для подготовки к работе и исполнению
+нашей программы. Данный паттерн здесь очень кстати, так как во время
+компиляции может предотвратить появление ошибок связанных с API.</p>
+<p>Метод <code>App::new()</code> создает новый <strong>App</strong>, который мы передадим в метод
+<code>connect_events()</code>. Данный метод преобразует <strong>App</strong> в <strong>ConnectedApp</strong>, 
+который реализует <code>then_execute()</code>, показывающий пользовательский интерфейс и
+выполняющий главный цикл событий. </p>
+<h1><a class="header" href="#Модуль-uimiscrs" id="Модуль-uimiscrs">Модуль ui/misc.rs</a></h1>
+<p>Мы реализуем несколько вспомогательных методов, которые при необходимости
+будут использоваться в проекте. Это две функции: одна для извлечения текста из
+<strong>GtkSourceBuffer</strong>, другая для установки названия у <strong>GtkHeaderBar</strong> с
+заданным <strong>Path</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+use sourceview::*;
+use std::path::Path;
+
+/// Присвоить заголовку в заголовочной панели ссылку на строковое
+/// представление пути к файлу. 
+pub fn set_title(headerbar: &amp;HeaderBar, path: &amp;Path) {
+    if let Some(filename) = path.file_name() {
+        let filename: &amp;str = &amp;filename.to_string_lossy();
+        headerbar.set_title(filename);
+    }
+}
+
+/// Получить все внутреннее содержимое данного текстового буфера в виде
+/// строки.
+pub fn get_buffer(buffer: &amp;Buffer) -&gt; Option&lt;String&gt; {
+    let start = buffer.get_start_iter();
+    let end = buffer.get_end_iter();
+    buffer.get_text(&amp;start, &amp;end, true)
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Создание-структуры-пользовательского-интерфейса" id="Создание-структуры-пользовательского-интерфейса">Создание структуры пользовательского интерфейса</a></h1>
+<p>TODO: вставить ссылку на картинку</p>
+<h2><a class="header" href="#Реализация-модуля-пользовательского-интерфейса-uimodrs" id="Реализация-модуля-пользовательского-интерфейса-uimodrs">Реализация модуля пользовательского интерфейса (ui/mod.rs)</a></h2>
+<p>Теперь, когда относящийся к UI код перемещен в свой собственный модуль,
+очень важно объявить подмодули, которые данный модуль будет импортировать.
+Также важно объявить типы и функции, который данный модуль будет
+экспортировать.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+mod app;
+mod content;
+mod dialogs;
+mod header;
+pub mod misc;
+pub mod save;
+
+pub use self::app::App;
+pub use self::content::Content;
+pub use self::dialogs::{OpenDialog, SaveDialog};
+pub use self::header::Header;
+#}</code></pre></pre>
+<p>Как можно заметить выше, мы создаем следующие модули: <strong>app.rs</strong>,
+<strong>content.rs</strong>, <strong>dialogs.rs</strong>, <strong>save.rs</strong>, <strong>header.rs</strong>, <strong>misc.rs</strong>.</p>
+<h2><a class="header" href="#Реализация-структуры-программы-uiapprs" id="Реализация-структуры-программы-uiapprs">Реализация структуры программы (ui/app.rs)</a></h2>
+<p>Данная часть должна быть более-менее простой, так как использует код, подобный
+тому, что был задействован в предыдущих главах. С той разницей, что мы
+переместили инициализацию GTK в начало <strong>App</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk;
+use gtk::*;
+use super::Header;
+use super::Content;
+
+pub struct App {
+    pub window:  Window,
+    pub header:  Header,
+    pub content: Content,
+}
+
+impl App {
+    pub fn new() -&gt; App {
+        // Инициализация GTK.
+        if gtk::init().is_err() {
+            eprintln!(&quot;failed to initialize GTK Application&quot;);
+            process::exit(1);
+        }
+
+        // Создать окно верхнего уровня.
+        let window = Window::new(WindowType::Toplevel);
+        // Создать заголовочную панель и связанное с ней содержимое.
+        let header = Header::new();
+        // Создать контейнер для хранения содержимого и виджетов.
+        let content = Content::new();
+
+        // Сделать заголовочную панель виджетом, содержащим название.
+        window.set_titlebar(&amp;header.container);
+        // Установить заголовок окна.
+        window.set_title(&quot;Markdown Editor&quot;);
+        // Установить класс менеджера окна.
+        window.set_wmclass(&quot;md-editor&quot;, &quot;Markdown Editor&quot;);
+        // Иконка программы.
+        window.set_default_size(800, 600);
+        Window::set_default_icon_name(&quot;iconname&quot;);
+        // Добавить содержимое вовнутрь окна.
+        window.add(&amp;content.container);
+
+        // Запрограммировать поведение кнопки выхода.
+        window.connect_delete_event(move |_, _| {
+            main_quit();
+            Inhibit(false)
+        });
+
+        // Возвратить структуру программы.
+        App { window, header, content }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-структуры-заголовка-uiheaderrs" id="Реализация-структуры-заголовка-uiheaderrs">Реализация структуры заголовка (ui/header.rs)</a></h2>
+<p>Данную структуру будет реализовать ещё проще. Мы реализуем кнопки <strong>Open</strong>,
+<strong>Save</strong>, <strong>Save As</strong>, которые будут находиться в заголовке. Мы будем
+использовать мнемоники, так что одна из букв в названии кнопок будет
+становиться подчеркнутой при нажатии на клавишу <strong>Alt</strong>, так что пользователь
+сможет выбрать нужную кнопку.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+
+pub struct Header {
+    pub container: HeaderBar,
+    pub open:      Button,
+    pub save:      Button,
+    pub save_as:   Button,
+}
+
+impl Header {
+    pub fn new() -&gt; Header {
+        // Создать контейнер для хранения главной заголовочной панели. 
+        let container = HeaderBar::new();
+
+        // Установить текст, который будет показывать в заголовке
+        // заголовочной панели.
+        container.set_title(&quot;Markdown Editor&quot;);
+        // Включить элементы управления окна внутри заголовочной панели.
+        container.set_show_close_button(true);
+
+        let open = Button::new_with_mnemonic(&quot;_Open&quot;);
+        let save = Button::new_with_mnemonic(&quot;_Save&quot;);
+        let save_as = Button::new_with_mnemonic(&quot;Save _As&quot;);
+        container.pack_start(&amp;open);
+        container.pack_end(&amp;save_as);
+        container.pack_end(&amp;save);
+
+        // Возвратить заголовок и все его внутреннее содержимое.
+        Header { container, open, save, save_as }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-структуры-содержимого-uicontentrs" id="Реализация-структуры-содержимого-uicontentrs">Реализация структуры содержимого (ui/content.rs)</a></h2>
+<p>Здесь мы начнем использовать <strong>GtkWebViews</strong>, <strong>GtkSourceViews</strong>.</p>
+<h3><a class="header" href="#Создание-просмотра-web" id="Создание-просмотра-web">Создание просмотра web</a></h3>
+<p>Создание просмотра web очень легко создать. Выполняя следующий код, вы получите
+панель для просмотра web, которую вы можете внедрить в ваш пользовательский
+интерфейс так же, как вы можете это сделать с другими виджетами.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Create a the WebView for the preview pane.
+let context = WebContext::get_default().unwrap();
+let preview = WebView::new_with_context(&amp;context);
+#}</code></pre></pre>
+<p>Данный просмотр web прокручиваем, так что эту функциональность не нужно
+реализовывать самостоятельно.</p>
+<h3><a class="header" href="#Создаем-и-настраиваем-просмотр-кода" id="Создаем-и-настраиваем-просмотр-кода">Создаем и настраиваем просмотр кода</a></h3>
+<p>Просмотр кода являются более сложной реализацией, потому что он требуют
+дополнительной настройки. Мы попытаемся получить следующий результат:</p>
+<ul>
+<li>Табуляция должна быть размером в 4 пробела</li>
+<li>Просмотрщик должен показывать номера строк</li>
+<li>Будем использовать шрифт по умолчанию - <em>monospaced</em>, размер - 11</li>
+<li>Подсветка синтаксиса Markdown</li>
+<li>Попытка использовать тему Builder, если не получится - тему Classic</li>
+</ul>
+<p>Начнем со структуры <strong>Source</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct Source {
+    pub container: ScrolledWindow,
+    pub view:      View,
+    pub buff:      Buffer,
+}
+
+impl Source {
+    fn new() -&gt; Source {
+
+    }
+}
+#}</code></pre></pre>
+<p>После этого создадим буфер и представление для просмотра, это делается
+так же, как и создание простого текстового буфера и представления для
+просмотра. Как только это сделано, мы поместим представление вовнутрь
+прокручиваемого окна.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Создать SourceView для редактора на левой панели.
+let buff = Buffer::new(None);
+let view = View::new_with_buffer(&amp;buff);
+let container = ScrolledWindow::new(None, None);
+container.add(&amp;view);
+#}</code></pre></pre>
+<p>Установим настройки, используя функцию, принимающую представление и буфер:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn configure_source_view(view: &amp;View, buff: &amp;Buffer) {
+    view.set_show_line_numbers(true);
+    view.set_monospace(true);
+    view.set_insert_spaces_instead_of_tabs(true);
+    view.set_indent_width(4);
+    view.set_smart_backspace(true);
+    view.set_right_margin(100);
+    view.set_left_margin(10);
+    view.set_show_right_margin(true);
+    view.set_background_pattern(BackgroundPatternType::Grid);
+    // TODO: следующий релиз пакета GTK
+    // view.set_input_hints(InputHints::SPELLCHECK + InputHints::WORD_COMPLETION);
+}
+#}</code></pre></pre>
+<p>Мы можем использовать пакет <strong>pango</strong> для изменения шрифта в представлении.
+Заметьте, нам необходимо объявить типаж, чтобы понять откуда появился метод
+<code>override_font</code>. Возможно, будущее обновление GTK Rust API займется решением
+этого вопроса.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Настраивает шрифт, используемый в панели с кодом. По умолчанию используется
+// Monospaced, размер - 11. Когда будем изменять шрифт, нужно вручную указать
+// типаж, в котором находится нужный метод.
+let font = FontDescription::from_string(&quot;monospace 11&quot;);
+WidgetExt::override_font(&amp;view, &amp;font);
+#}</code></pre></pre>
+<p>Включим подсветку синтаксиса Markdown по умолчанию. Используемые языки
+извлекаются из <strong>LanguageManager</strong>. Язык будет присвоен напрямую буферу,
+а не представлению.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Включить подсветку Markdown
+LanguageManager::new()
+    .get_language(&quot;markdown&quot;)
+    .map(|markdown| buff.set_language(&amp;markdown));
+#}</code></pre></pre>
+<p>Укажем используемую схему.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let manager = StyleSchemeManager::new();
+    manager
+        .get_scheme(&quot;Builder&quot;)
+        .or(manager.get_scheme(&quot;Classic&quot;))
+        .map(|theme| buff.set_style_scheme(&amp;theme));
+#}</code></pre></pre>
+<h2><a class="header" href="#Полный-исходный-код" id="Полный-исходный-код">Полный исходный код</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+use pango::*;
+use sourceview::*;
+use webkit2gtk::*;
+
+pub struct Content {
+    pub container: Paned,
+    pub source:    Source,
+    pub preview:   WebView,
+}
+
+pub struct Source {
+    pub container: ScrolledWindow,
+    pub view:      View,
+    pub buff:      Buffer,
+}
+
+impl Content {
+    pub fn new() -&gt; Content {
+        // Создать контейнер для хранения главного содержимого
+        let container = Paned::new(Orientation::Horizontal);
+        let source = Source::new();
+
+        // Создать WebView для предыдущей панели.
+        let context = WebContext::get_default().unwrap();
+        let preview = WebView::new_with_context(&amp;context);
+
+        // Упакуем
+        container.pack1(&amp;source.container, true, true);
+        container.pack2(&amp;preview, true, true);
+
+        // Сделать так, чтобы две панели имели одинаковый размер - половина
+        // контейнера, в котором они находятся.
+        source.container.set_size_request(100, -1);
+        preview.set_size_request(100, -1);
+
+        Content { container, source, preview }
+    }
+}
+
+impl Source {
+    pub fn new() -&gt; Source {
+        // Создать SourceView для редактора на левой панели.
+        let buff = Buffer::new(None);
+        let view = View::new_with_buffer(&amp;buff);
+        let container = ScrolledWindow::new(None, None);
+        container.add(&amp;view);
+
+        configure_source_view(&amp;view, &amp;buff);
+
+        Source { container, buff, view }
+    }
+}
+
+fn configure_source_view(view: &amp;View, buff: &amp;Buffer) {
+    WidgetExt::override_font(view, &amp;FontDescription::from_string(&quot;monospace&quot;));
+
+    LanguageManager::new()
+        .get_language(&quot;markdown&quot;)
+        .map(|markdown| buff.set_language(&amp;markdown));
+
+    let manager = StyleSchemeManager::new();
+    manager
+        .get_scheme(&quot;Builder&quot;)
+        .or(manager.get_scheme(&quot;Classic&quot;))
+        .map(|theme| buff.set_style_scheme(&amp;theme));
+
+    view.set_show_line_numbers(true);
+    view.set_monospace(true);
+    view.set_insert_spaces_instead_of_tabs(true);
+    view.set_indent_width(4);
+    view.set_smart_backspace(true);
+    view.set_right_margin(100);
+    view.set_left_margin(10);
+    view.set_show_right_margin(true);
+    view.set_background_pattern(BackgroundPatternType::Grid);
+    // TODO: следующий релиз пакета GTK
+    // view.set_input_hints(InputHints::SPELLCHECK + InputHints::WORD_COMPLETION);
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Работа-с-внешним-состоянием" id="Работа-с-внешним-состоянием">Работа с внешним состоянием</a></h1>
+<p>Данная часть рассматривает модуль <strong>state.rs</strong>, который будет содержать в себе
+типы, используемые для работы с не-GTK внешним состоянием. Это будет очень
+просто, потому что Markdown-редактор не хранит большой объем данных во внешнем
+хранилище.</p>
+<h2><a class="header" href="#Что-нам-нужно" id="Что-нам-нужно">Что нам нужно?</a></h2>
+<p>Имеются два ключевых компонента, которые должны нас заботить в течение времени
+жизни программы</p>
+<ul>
+<li>путь к редактируемому файлу</li>
+<li>хеш-сумма содержимого файла для сравнения текущего содержимого редактора с
+содержимым файла для того чтобы знать, когда активировать/деактивировать
+кнопку <strong>Save</strong>.</li>
+</ul>
+<h2><a class="header" href="#activemetadata" id="activemetadata">ActiveMetadata</a></h2>
+<p>Так появилась структура <strong>ActiveMetadata</strong>. Она содержит <strong>PathBuf</strong>,
+используемый для хранения пути к редактируемому файлу, и 64-байтный
+хеш, который будет сгенерирован функцией <strong>keccak512()</strong> из пакета
+<a href="https://docs.rs/tiny-keccak/1.4.0/tiny_keccak/fn.keccak512.html">tiny-keccak</a></p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use std::path::{Path, PathBuf};
+use tiny_keccak::keccak512;
+
+pub struct ActiveMetadata {
+    path: PathBuf,
+    sum:  [u8; 64],
+}
+#}</code></pre></pre>
+<p>Реализация методов для этого типа будет простой. Мы должны создать:</p>
+<ul>
+<li>новый экземпляр метаданных</li>
+<li>функцию для получения ссылки на путь к файлу</li>
+<li>функцию для проверки того, что хеш-сумма содержимого в редакторе такая же,
+как и хранимая в структуре, функцию для обновления значения хеш-суммы при
+сохранении файла</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl ActiveMetadata {
+    pub fn new(path: PathBuf, data: &amp;[u8]) -&gt; ActiveMetadata {
+        ActiveMetadata { path, sum: keccak512(data) }
+    }
+
+    pub fn get_path&lt;'a&gt;(&amp;'a self) -&gt; &amp;'a Path { &amp;self.path }
+
+    pub fn get_dir(&amp;self) -&gt; Option&lt;PathBuf&gt; { self.path.parent().map(|p| p.to_path_buf()) }
+
+    pub fn is_same_as(&amp;self, data: &amp;[u8]) -&gt; bool { &amp;keccak512(data)[..] == &amp;self.sum[..] }
+
+    pub fn set_sum(&amp;mut self, data: &amp;[u8]) { self.sum = keccak512(data); }
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Создание-событий" id="Создание-событий">Создание событий</a></h1>
+<p>Именно здесь мы начнем творить волшебство для нашего пользовательского интерфейса. Посмотрите снова на модуль <strong>app.rs</strong>, потому что сейчас мы добавим метод <strong>App::connect_events()</strong>.</p>
+<h2><a class="header" href="#connectedapp" id="connectedapp">ConnectedApp</a></h2>
+<p>Однако, прежде чем мы начнём, заранее создадим обёртку <strong>ConnectedApp</strong>, реализующую метод <strong>then_execute()</strong>, который мы видели ранее.
+Цель будет преобразовывать <strong>App</strong> в <strong>ConnectedApp</strong> после того, как в
+<strong>App</strong> будет вызван метод <strong>App::connect_events()</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Обёртка `App`, обеспечивывающая запуск программы.
+pub struct ConnectedApp(App);
+
+impl ConnectedApp {
+    /// Покажем окно и запустим главный цикл событий GTK.
+    pub fn then_execute(self) {
+        self.0.window.show_all();
+        gtk::main();
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#connect_events" id="connect_events">connect_events()</a></h2>
+<p>Продолжим и наконец-то добавим метод <strong>App::connect_events()</strong> в блок <strong>impl</strong>
+с типом <strong>App</strong>, в котором объявим право на владение <strong>App</strong> и вернём <strong>ConnectedApp</strong> в конец. </p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Создадим внешнее состояние и сравним всю функциональность UI.
+impl App {
+    pub fn new() -&gt; App { ... }
+
+    pub fn connect_events(self) -&gt; ConnectedApp {
+        // Внешнее состояние для обмена событиями.
+        let current_file = Arc::new(RwLock::new(None));
+
+        // Соединим все события, с которыми будет взаимодействовать UI.
+        self.editor_changed(
+            current_file.clone(),
+            &amp;self.header.save.clone()
+        );
+
+        // Завернём `App` внутрь `ConnectedApp`, чтобы
+        // выполнить программу.
+        ConnectedApp(self)
+    }
+}
+#}</code></pre></pre>
+<p>С помощью типа <strong>ActiveMetadata</strong>, который мы создали ранее, создадим переменную
+<strong>RwLock'd</strong> <strong>current_file</strong>, которая содержит <strong>Option&lt;ActiveMetadata&gt;</strong>.
+По умолчанию, установленное значение равно <strong>None</strong>, т.к. сначала не будет доступного файла для отслеживания.</p>
+<p>Первым событием будет изменение исходного буфера, который мы реализуем в методе <strong>App::editor_changed()</strong>. Этот метод будет принимать ссылку на <strong>RwLock'd</strong> <strong>current_file</strong>,
+а также ссылку на кнопку <strong>Save</strong>. Значение проходит через кнопку сохранения и изменяется в зависимости от <em>чувствительности</em> содержимого буфера.</p>
+<blockquote>
+<p>Если кнопка неактивна, то вы не можете нажать на неё.</p>
+</blockquote>
+<h1><a class="header" href="#markdown-to-html" id="markdown-to-html">Markdown to HTML</a></h1>
+<p>До того как мы реализуем метод <strong>connect_changed()</strong>, сначала нужно
+реализовать модуль <strong>preview</strong>,  который будет использовать метод, чтобы получить
+HTML-строку для передачи в web-представление.</p>
+<p>Два шага, чтобы преобразовать Markdown в HTML. Первый, включает в себя простое преобразование Markdown в HTML, но и этого недостаточно.
+Вам также необходимо интегрировать это в дополнительный HTML и сделать поддержку
+подсветки синтаксиса с помощью JavaScript. Не беспокойтесь, потому что мы будем использовать <strong>highlight.js</strong>, который позаботится за нас об этом.</p>
+<h2><a class="header" href="#Преобразование-markdown-в-html" id="Преобразование-markdown-в-html">Преобразование Markdown в HTML</a></h2>
+<p>К счастью, у корпорации Google существует пакет (crate)
+<a href="https://github.com/google/pulldown-cmark">pulldown-cmark</a>. Обратите внимание, что
+он реализован в качестве парсера для повышения эффективности. Осталось предоставить Markdown текст в качестве <strong>&amp;str</strong> в структуру <strong>Parser</strong> и указать изменяемую ссылку <strong>String</strong>, чтобы вернуть HTML.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use pulldown_cmark::{html, Parser};
+
+/// Входит Markdown текст; выходит HTML текст.
+fn mark_to_html(markdown: &amp;str) -&gt; String {
+    let parser = Parser::new(&amp;markdown);
+    let mut buffer = String::new();
+    html::push_html(&amp;mut buffer, parser);
+    buffer
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Применение-стиля-к-нашему-html" id="Применение-стиля-к-нашему-html">Применение стиля к нашему HTML</a></h2>
+<p>Мы не хотим останавливаться на достигнутом, поэтому будем использовать функцию (указанную выше) внутри нашей публичной функии <strong>render()</strong>, чтобы интегрировать CSS вместе с JavaScript и получить ожидаемый вывод HTML в web просмотр.</p>
+<blockquote>
+<p>Заметьте, что мы предоставляем HTML из нашего markdown в секцию <strong>body</strong>
+HTML страницы и имеем завернутую строку <strong>Raw</strong>, чтобы сказать
+макросу <strong>horrorshow</strong> не уходить от внутреннего текста. Если вы предпочитаете
+большее кол-во стилей, тогда вы можете применить дополнительные стили для
+вашего текста.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use horrorshow::Raw;
+use horrorshow::helper::doctype;
+
+/// Входит Markdown текст; выходит стильный HTML текст.
+pub fn render(markdown: &amp;str) -&gt; String {
+    format!(
+        &quot;{}&quot;,
+        html!(
+            : doctype::HTML;
+            html {
+                head {
+                    link(rel=&quot;stylesheet&quot;, href=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css&quot;) {}
+                    script(src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js&quot;) {}
+                    script(src=&quot;https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js&quot;) {}
+                    script {
+                        : Raw(&quot;hljs.initHighlightingOnLoad()&quot;)
+                    }
+                    style {
+                        : &quot;body { width: 80%; margin: 0 auto }&quot;;
+                        : &quot;img { max-width: 80% }&quot;
+                    }
+                }
+                body {
+                    : Raw(&amp;mark_to_html(markdown));
+                }
+            }
+        )
+    )
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Обновление-webviews" id="Обновление-webviews">Обновление WebViews</a></h1>
+<p>Первой фичей, с нашим пользовательским интерфейсом, будет динамическое обновление web предпросмотра. Начнём с создания нового метода <strong>App::editor_changed()</strong> для <strong>App</strong>, который принимает компонент <strong>current_file</strong> и ссылку на кнопку <strong>save</strong>, для отключения и включения кнопки через некоторое время, чтобы указать, были ли сделаны изменения, требующие сохранения.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Обновляет WebView при изменении SourceBuffer.
+fn editor_changed(
+    &amp;self,
+    current_file: Arc&lt;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;&gt;,
+    save_button: &amp;Button,
+) {
+    let preview = self.content.preview.clone();
+    let save_button = save_button.clone();
+    self.content.source.buff.connect_changed(move |editor| {
+        if let Some(markdown) = get_buffer(&amp;editor) {
+            preview.load_html(&amp;render(&amp;markdown), None);
+            if let Some(ref current_file) = *current_file.read().unwrap() {
+                let has_same_sum = current_file.is_same_as(&amp;markdown.as_bytes());
+                save_button.set_sensitive(!has_same_sum);
+            }
+        }
+    });
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#connect_changed" id="connect_changed">connect_changed()</a></h2>
+<p>В коде выше вы могли заметить, что мы вызываем метод <strong>connect_changed</strong>  из исходного буфера, чтобы обновить просмотр и изменить кнопку сохранения, как только буфер будет изменён.</p>
+<h2><a class="header" href="#Получение-текста-из-source-buffer" id="Получение-текста-из-source-buffer">Получение текста из Source Buffer</a></h2>
+<p>Используем функцию <strong>get_buffer()</strong> из модуля <strong>misc.rs</strong>:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+if let Some(markdown) = get_buffer(&amp;editor) {
+
+}
+#}</code></pre></pre>
+<p>Мы можем получить текст в буфере редактора.</p>
+<h2><a class="header" href="#Обновление-web-просмотра" id="Обновление-web-просмотра">Обновление Web просмотра</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+preview.load_html(&amp;render(&amp;markdown), None);
+#}</code></pre></pre>
+<p>Здесь мы используем функцию <strong>render()</strong> из модуля <strong>preview</strong>
+для преобразования <code>Markdown</code> текста в HTML строку и незамедлительно
+передаём этот HTML в наш <code>preview</code> с помощью метода <strong>load_html()</strong>.</p>
+<h2><a class="header" href="#Изменение-кнопки-save" id="Изменение-кнопки-save">Изменение кнопки Save</a></h2>
+<p>Этот раздел - последний фрагмент задачи, где мы получаем read-only
+блокировку для текущего файла и проверяем: генерируется ли текст в буфере с таким же хешем, как и хеш хранящийся на диске. Если хеш совпадает - кнопка сохранения будет неактивна. Если не совпадает - она будет активна.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+if let Some(ref current_file) = *current_file.read().unwrap() {
+    let has_same_sum = current_file.is_same_as(&amp;markdown.as_bytes());
+    save_button.set_sensitive(!has_same_sum);
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Диалог-выбора-файла" id="Диалог-выбора-файла">Диалог выбора файла</a></h1>
+<blockquote>
+<p>Заметьте, что это модуль dialogs.rs</p>
+</blockquote>
+<p>GTK Rust API не используют преимущества типажа <strong>Drop</strong> в Rust, поэтому при появлении диалога, он будет всегда находится на вашем экране. К счастью, мы можем решить эту проблему самостоятельно, создав тип для <strong>GtkFileChooserDialogs</strong> и реализовать типаж <strong>Drop</strong>, чтобы разрушить внутренний диалог после сброса типа.</p>
+<h2><a class="header" href="#Создание-opendialog" id="Создание-opendialog">Создание OpenDialog</a></h2>
+<p>Начнём с создания простой кортёжной структуры.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct OpenDialog(FileChooserDialog);
+#}</code></pre></pre>
+<p>Реализуем простой метод <strong>new()</strong> для этой структуры и создадим внутренний <strong>FileChooserDialog</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl OpenDialog {
+    pub fn new(path: Option&lt;PathBuf&gt;) -&gt; OpenDialog {
+        // Создадим новый диалог выбора файлов, чтобы открыть их.
+        let open_dialog = FileChooserDialog::new(
+            Some(&quot;Open&quot;),
+            Some(&amp;Window::new(WindowType::Popup)),
+            FileChooserAction::Open,
+        );
+
+        // Добавим кнопки отмены и открытия для этого диалога.
+        open_dialog.add_button(&quot;Cancel&quot;, ResponseType::Cancel.into());
+        open_dialog.add_button(&quot;Open&quot;, ResponseType::Ok.into());
+
+        // Установим стандартный путь открытия файла.
+        path.map(|p| open_dialog.set_current_folder(p));
+
+        OpenDialog(open_dialog)
+    }
+}
+#}</code></pre></pre>
+<p>Смысл <strong>FileChooserDialog</strong> состоит в том, чтобы дать имя диалогу и предоставить новое окно с типом <strong>Popup</strong>, а затем выбрать соответствующее <strong>FileChooserAction</strong>,
+который нужен вашим критериям при использовании. В этом случае, мы
+создадим диалог <strong>Open</strong>, чтобы открыть файл.</p>
+<p>После создания установите label для двух
+кнопок внутри диалога и установите нужный <strong>ResponseTypes</strong> с этими кнопками.
+Очень важно знать, нажал ли пользователь <strong>Cancel</strong> или <strong>Ok</strong>.</p>
+<p>Как только закончим, нам необходимо обернуть тип в нашем <strong>OpenDialog</strong>.</p>
+<h2><a class="header" href="#Создание-savedialog" id="Создание-savedialog">Создание SaveDialog</a></h2>
+<p>Диалог Save практически идентичен.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct SaveDialog(FileChooserDialog);
+
+impl SaveDialog {
+    pub fn new(path: Option&lt;PathBuf&gt;) -&gt; SaveDialog {
+        // Инициализируем новый даилог встроенный в всплывающее окно.
+        let save_dialog = FileChooserDialog::new(
+            Some(&quot;Save As&quot;),
+            Some(&amp;Window::new(WindowType::Popup)),
+            FileChooserAction::Save,
+        );
+
+        // Добавим кнопки cancel и save к диалогу.
+        save_dialog.add_button(&quot;Cancel&quot;, ResponseType::Cancel.into());
+        save_dialog.add_button(&quot;Save&quot;, ResponseType::Ok.into());
+
+        // Установим стандартный путь открытия файла.
+        path.map(|p| save_dialog.set_current_folder(p));
+
+        SaveDialog(save_dialog)
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-типажа-drop" id="Реализация-типажа-drop">Реализация типажа Drop</a></h2>
+<p>Объекты в GTK разрушаются с помощью метода <strong>destroy()</strong>. Если вы хотите разрушить наш диалог после того, как мы сбросили их обращение (handles), мы можем сделать это автоматически реализуя типаж <strong>Drop</strong> на обоих типах.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+impl Drop for OpenDialog {
+    fn drop(&amp;mut self) { self.0.destroy(); }
+}
+
+impl Drop for SaveDialog {
+    fn drop(&amp;mut self) { self.0.destroy(); }
+}
+#}</code></pre></pre>
+<p>Глупо, но просто. Мы вызываем метод <strong>destroy()</strong>
+для внутреннего значения наших новых типов.</p>
+<h2><a class="header" href="#Реализация-полезного-метода" id="Реализация-полезного-метода">Реализация полезного метода</a></h2>
+<p>Следующий метод может быть добавлен в блок impl для обоих типов и они
+упрощают запуск и получают данные на выходе, которые мы хотим.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn run(&amp;self) -&gt; Option&lt;PathBuf&gt; {
+    if self.0.run() == ResponseType::Ok.into() {
+        self.0.get_filename()
+    } else {
+        None
+    }
+}
+#}</code></pre></pre>
+<p>В основном мы показываем/запускаем диалог и проверяем вывод, чтобы определить,
+получили ли мы ответ <strong>Ok</strong>. Если ответ <strong>Ok</strong>, мы просто пытаемся вернуть имя файла, которое существует или не существует.</p>
+<h2><a class="header" href="#Весь-код" id="Весь-код">Весь код</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+use std::path::PathBuf;
+
+/// Обёрнутый FileChooserDialog автоматически разрушающийся при сбрасывании.
+pub struct OpenDialog(FileChooserDialog);
+
+/// Обёрнутый FileChooserDialog автоматически разрушающийся при сбрасывании.
+pub struct SaveDialog(FileChooserDialog);
+
+impl OpenDialog {
+    pub fn new() -&gt; OpenDialog {
+        // Создадим новый диалог выбора файлов, чтобы открыть их.
+        let open_dialog = FileChooserDialog::new(
+            Some(&quot;Open&quot;),
+            Some(&amp;Window::new(WindowType::Popup)),
+            FileChooserAction::Open,
+        );
+
+        // Добавим кнопки cancel и open для этого диалога.
+        open_dialog.add_button(&quot;Cancel&quot;, ResponseType::Cancel.into());
+        open_dialog.add_button(&quot;Open&quot;, ResponseType::Ok.into());
+
+        OpenDialog(open_dialog)
+    }
+
+    pub fn run(&amp;self) -&gt; Option&lt;PathBuf&gt; {
+        if self.0.run() == ResponseType::Ok.into() {
+            self.0.get_filename()
+        } else {
+            None
+        }
+    }
+}
+
+impl SaveDialog {
+    pub fn new() -&gt; SaveDialog {
+        // Инициализируем новый диалог, встроенный в всплывающее окно.
+        let save_dialog = FileChooserDialog::new(
+            Some(&quot;Save As&quot;),
+            Some(&amp;Window::new(WindowType::Popup)),
+            FileChooserAction::Save,
+        );
+
+        // Добавим кнопки cancel и save к диалогу.
+        save_dialog.add_button(&quot;Cancel&quot;, ResponseType::Cancel.into());
+        save_dialog.add_button(&quot;Save&quot;, ResponseType::Ok.into());
+
+        SaveDialog(save_dialog)
+    }
+
+    pub fn run(&amp;self) -&gt; Option&lt;PathBuf&gt; {
+        if self.0.run() == ResponseType::Ok.into() {
+            self.0.get_filename()
+        } else {
+            None
+        }
+    }
+}
+
+impl Drop for OpenDialog {
+    fn drop(&amp;mut self) { self.0.destroy(); }
+}
+
+impl Drop for SaveDialog {
+    fn drop(&amp;mut self) { self.0.destroy(); }
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Программирование-кнопки-open" id="Программирование-кнопки-open">Программирование кнопки Open</a></h1>
+<p>Самое время запрограммировать логику работы кнопок <strong>Open</strong>, <strong>Save</strong>,
+<strong>Save As</strong> в нашем пользовательском интерфейсе. Начнём с реализации кнопки
+<strong>Open</strong>, создав новый метод <strong>open_file()</strong>, который будет вызван из
+метода <strong>connect_events()</strong>.</p>
+<h2><a class="header" href="#Кнопка-open" id="Кнопка-open">Кнопка Open</a></h2>
+<p>Функция кнопки <strong>open_file()</strong> получит доступ к переменной <strong>current_file</strong>,
+которая будет обновлена после успешного открытия выбранного файла.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn connect_events(self) -&gt; ConnectedApp {
+    // Внешнее состояние, которое доступно для событий.
+    let current_file = Arc::new(RwLock::new(None));
+
+    // Подсоединить события, обрабатываемые пользовательским интерфейсом.
+    self.editor_changed(current_file.clone(), &amp;self.header.save.clone());
+    self.open_file(current_file.clone());
+
+    // Обернуть `ConnectedApp` вокруг `App` для того, чтобы дать возможность
+    // разработчику выполнить программу.
+    ConnectedApp(self)
+}
+#}</code></pre></pre>
+<h3><a class="header" href="#connect_clicked" id="connect_clicked">connect_clicked()</a></h3>
+<p>Метод <strong>open_file()</strong> будет получать:</p>
+<ul>
+<li>ссылки на буфер редактора и писать информацию из открытого файла в буфер.</li>
+<li>ссылки на панель web просмотра, так что мы сможем обновлять её после
+открытия файла.</li>
+<li>ссылку на заголовочную панель, так что мы сможем обновлять название.</li>
+<li>кнопку <strong>Open</strong>, так что мы сможем отобразить событие <strong>connect_clicked()</strong>
+на неё.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn open_file(&amp;self, current_file: Arc&lt;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;&gt;) {
+    let editor = self.content.source.buff.clone();
+    let preview = self.content.preview.clone();
+    let headerbar = self.header.container.clone();
+    self.header.open.connect_clicked(move |_| {
+        // Программировать кнопку здесь.
+    });
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Создание-opendialog-1" id="Создание-opendialog-1">Создание OpenDialog</a></h2>
+<p>Создадим новый <strong>OpenDialog</strong> внутри <strong>connect_clicked()</strong>. Открывая
+диалоговое окно, мы попытаемся передать родительскую директорию в
+<strong>current_file</strong>, если она существует, поэтому окно для открытия файла по
+умолчанию использует данную директорию.</p>
+<blockquote>
+<p>Заметьте, я здесь использую <strong>if let Some(ref path)</strong>, а не просто <strong>map</strong>
+из-за ограничений на заимствования - если нельзя добиться того, что <strong>map</strong>
+будет правильно заимствовать, следует использовать <strong>match</strong> или <strong>if let</strong>.</p>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Создать диалоговое окно для открытия файла, используя родительскую
+// директорию в качестве предпочитаемой, если он установлен.
+let open_dialog = OpenDialog::new({
+    let lock = current_file.read().unwrap();
+    if let Some(ref path) = *lock {
+        path.get_dir()
+    } else {
+        None
+    }
+});
+#}</code></pre></pre>
+<h2><a class="header" href="#Запуск-диалогового-окна" id="Запуск-диалогового-окна">Запуск диалогового окна</a></h2>
+<p>После получения переменной <strong>open_dialog</strong>, мы можем запустить диалог, а также:</p>
+<ul>
+<li>захватить выбранный путь к файлу</li>
+<li>считать данные из файла в буфер</li>
+<li>обновить панель для web просмотра</li>
+<li>обновить название</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Запускает диалоговое окно и открывает файл, если он был выбран.
+if let Some(new_file) = open_dialog.run() {
+    if let Ok(mut file) = File::open(&amp;new_file) {
+        // Считать содержимое файла в находящийся в памяти буфер.
+        let mut contents = String::new();
+        let _ = file.read_to_string(&amp;mut contents);
+
+        // Обновить название.
+        set_title(&amp;headerbar, &amp;new_file);
+        if let Some(parent) = new_file.parent() {
+            let subtitle: &amp;str = &amp;parent.to_string_lossy();
+            headerbar.set_subtitle(subtitle);
+        }
+
+        // Установить публично доступный путь к файлу.
+        *current_file.write().unwrap() =
+            Some(ActiveMetadata::new(new_file, &amp;contents.as_bytes()));
+
+        // Обновить содержимое редактора и предпросмотровую панель.
+        editor.set_text(&amp;contents);
+        preview.load_html(&amp;render(&amp;contents), None);
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Полный-код" id="Полный-код">Полный код</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn open_file(&amp;self, current_file: Arc&lt;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;&gt;) {
+    let editor = self.content.source.buff.clone();
+    let preview = self.content.preview.clone();
+    let headerbar = self.header.container.clone();
+    self.header.open.connect_clicked(move |_| {
+        // Создать диалоговое окно для открытия файла, используя родительскую
+        // директорию в качестве предпочитаемой, если он установлен.
+        let open_dialog = OpenDialog::new({
+            let lock = current_file.read().unwrap();
+            if let Some(ref path) = *lock {
+                path.get_dir()
+            } else {
+                None
+            }
+        });
+
+        // Запускает диалоговое окно и открывает файл, если он был выбран.
+        if let Some(new_file) = open_dialog.run() {
+            if let Ok(mut file) = File::open(&amp;new_file) {
+                // Считать содержимое файла в находящийся в памяти буфер.
+                let mut contents = String::new();
+                let _ = file.read_to_string(&amp;mut contents);
+
+                // Обновить название.
+                set_title(&amp;headerbar, &amp;new_file);
+                if let Some(parent) = new_file.parent() {
+                    let subtitle: &amp;str = &amp;parent.to_string_lossy();
+                    headerbar.set_subtitle(subtitle);
+                }
+
+                // Установить публично доступный путь к файлу.
+                *current_file.write().unwrap() =
+                    Some(ActiveMetadata::new(new_file, &amp;contents.as_bytes()));
+
+                // Обновить содержимое редактора и предпросмотровую панель.
+                editor.set_text(&amp;contents);
+                preview.load_html(&amp;render(&amp;contents), None);
+            }
+        }
+    });
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Программирование-кнопки-save" id="Программирование-кнопки-save">Программирование кнопки Save</a></h1>
+<p>Кнопки <strong>Save</strong> и <strong>Save As</strong> имеют более сложную реализацию, частично из-за
+того, что нужно иногда менять состояние кнопки <strong>Save</strong>, а также из-за того,
+что кнопка <strong>Save</strong> не должна открывать диалоговое окно когда имеется активный
+файл - она должна немедленно сохранять его на диск.</p>
+<h2><a class="header" href="#appsave_event" id="appsave_event">App:save_event()</a></h2>
+<p>Объявим метод <strong>App::save_event()</strong>, который мы будем использовать в методе
+<strong>App::connect_events()</strong> и поместим детали реализации в функцию <strong>save()</strong>
+модуля <strong>save.rs</strong>.</p>
+<p>Ключевые параметры, которые нам нужны:</p>
+<ul>
+<li>параметр <strong>save_button</strong>, который мы будем программировать.</li>
+<li>кнопка <strong>Save</strong>, с именем <strong>actual_button</strong>.</li>
+<li>доступ к <strong>ActiveMetadata</strong> текущего файла.</li>
+<li>обозначение того, является ли параметр <strong>save_button</strong> кнопкой
+<strong>Save As</strong> или нет.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Используется для программирования кнопок **Save** и **Save As**.
+fn save_event(
+    &amp;self,
+    save_button: &amp;Button,
+    actual_button: &amp;Button,
+    current_file: Arc&lt;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;&gt;,
+    save_as: bool,
+) {
+    let editor = self.content.source.buff.clone();
+    let headerbar = self.header.container.clone();
+    let save_button = save_button.clone();
+    actual_button.connect_clicked(
+        move |_| save(&amp;editor, &amp;headerbar, &amp;save_button, &amp;current_file, save_as),
+    );
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Обновленный-appconnect_event" id="Обновленный-appconnect_event">Обновленный App:connect_event()</a></h2>
+<p>Далее, нужно написать метод <strong>App::connect_events()</strong> так, чтобы мы могли
+передать в него два новых метода:</p>
+<ul>
+<li>первый - программирует кнопку <strong>Save</strong>.</li>
+<li>второй - программирует кнопку <strong>Save As</strong>.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Создать внешнее состояние и отобразить всю функциональность UI на
+/// пользовательский интерфейс.
+pub fn connect_events(self) -&gt; ConnectedApp {
+    // Внешнее состояние, доступное для событий.
+    let current_file = Arc::new(RwLock::new(None));
+    // Отслеживать, открыта ли программа на весь экран или нет.
+    let fullscreen = Arc::new(AtomicBool::new(false));
+
+    {
+        let save = &amp;self.header.save;
+        let save_as = &amp;self.header.save_as;
+
+        // Присоединить все события, который наш пользовательский интерфейс
+        // будет обрабатывать.
+        self.editor_changed(current_file.clone(), &amp;save.clone());
+        self.open_file(current_file.clone());
+        self.save_event(&amp;save.clone(), &amp;save.clone(), current_file.clone(), false);
+        self.save_event(&amp;save, &amp;save_as, current_file.clone(), true);
+    }
+
+    // Обернуть `ConnectedApp` вокруг `App` для того, чтобы дать возможность
+    // разработчику выполнять программу.
+    ConnectedApp(self)
+}
+#}</code></pre></pre>
+<h3><a class="header" href="#Реализация-модуля-savers" id="Реализация-модуля-savers">Реализация модуля <strong>save.rs</strong></a></h3>
+<p>Начнём с добавления необходимых импортов:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use super::SaveDialog;
+use super::misc::*;
+use gtk::*;
+use sourceview::*;
+use state::ActiveMetadata;
+use std::fs::OpenOptions;
+use std::io::{self, Write};
+use std::sync::RwLock;
+#}</code></pre></pre>
+<p>Мы хотим знать, был ли сохранён новый файл, перезаписан ли текущий или
+сохранение было прервано.Создадим перечисление для представления различных
+состояний:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub enum SaveAction {
+    New(ActiveMetadata),
+    Saved,
+    Canceled,
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Запись-данных-и-получение-saveaction" id="Запись-данных-и-получение-saveaction">Запись данных и получение SaveAction</a></h2>
+<p>Приватная функция <strong>write_data()</strong> будет использована для записи данного
+буфера (<strong>data</strong>) в файл и оповещения о результате действия по сохранению
+файла. Если это была кнопка <strong>Save</strong> и сейчас существует <strong>ActiveMetadata</strong>,
+тогда данные будут просто записаны в существующий файл и возвращен
+<strong>Ok(SaveAction::Saved)</strong>.</p>
+<p>В противном случае, если была нажата кнопка <strong>Save As</strong>, или была нажата
+кнопка <strong>Save</strong>, но не было <strong>ActiveMetadata</strong>, тогда будет запущен
+<strong>SaveDialog</strong> для получения нового файла и возвращения
+<strong>Ok(SaveAction::New(ActiveMetadata))</strong>. Мы возвратим
+<strong>Ok(SaveAction::Cancelled)</strong>, если пользователь нажал на кнопку отмены в
+диалоговом окне.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Сохраняет данные в файл, находящийся по предоставленному пути. Если путь
+/// является **None**, окно сохранения файла будет запущено для получения пути
+/// от пользователя. Если будет запущено диалоговое окно, данная функция
+/// возвратит **Ok(Some(path))**, иначе - **Ok(None)**. Значение **Err**
+/// указывает на связанную с вводом/выводом ошибку, которая произошла при
+/// попытке сохранения файла. 
+fn write_data(path: Option&lt;&amp;ActiveMetadata&gt;, data: &amp;[u8]) -&gt; io::Result&lt;SaveAction&gt; {
+    if let Some(path) = path {
+        // Сохранить данные в предоставленный файл, предварительно усекая его.
+        let mut file =
+            OpenOptions::new().create(true).write(true).truncate(true).open(path.get_path())?;
+        file.write_all(&amp;data)?;
+        return Ok(SaveAction::Saved);
+    }
+    
+    let save_dialog = SaveDialog::new(None);
+    if let Some(new_path) = save_dialog.run() {
+        let mut file =
+            OpenOptions::new().create(true).write(true).truncate(false).open(&amp;new_path)?;
+        file.write_all(data)?;
+        Ok(SaveAction::New(ActiveMetadata::new(new_path, data)))
+    } else {
+        Ok(SaveAction::Canceled)
+    }
+}
+#}</code></pre></pre>
+<h3><a class="header" href="#Написание-функции-save" id="Написание-функции-save">Написание функции <strong>save()</strong></a></h3>
+<p>Напишем функцию <strong>save()</strong> в этом модуле. Первым шагом получим текст из
+буфера. Потом предоставим метаинформацию о файле в зависимости от того, была
+нажата кнопка <strong>Save As</strong> или <strong>Save</strong>. После этого обработает полученный
+<strong>SaveAction</strong>:</p>
+<ul>
+<li>вариант <strong>New</strong> предоставит новую метаинформацию, которую мы сохраним как
+текущую и обновим название.</li>
+<li>вариант <strong>Saved</strong> оповестит нас о том, что мы должны вычислить хеш текста,
+который был записан на диск, и обновить текущую хеш-сумму файла для отражения
+нового состояния файла.</li>
+</ul>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn save(
+    editor: &amp;Buffer,
+    headerbar: &amp;HeaderBar,
+    save: &amp;Button,
+    current_file: &amp;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;,
+    save_as: bool,
+) {
+    if let Some(text) = get_buffer(editor) {
+        // Если мы программируем кнопку **Save As**, то мы не будем
+        // использовать текущий путь. В противном случае мы сохраним текст в
+        // редакторе в находящийся по текущему пути файл, если этот путь имеется.
+        let result = if save_as {
+            write_data(None, text.as_bytes())
+        } else {
+            write_data(current_file.read().unwrap().as_ref(), text.as_bytes())
+        };
+
+        // Сейчас мы подберем соответствие к выведенному функцией **save()**
+        // результату. Мы будем обрабатывать случай, когда возвращенное
+        // значение соответствует шаблону **Ok(Some(ActiveMetadata))**,
+        // устанавливая название заголовочной панели, и путь, который мы
+        // получили, в качестве текущего файла.
+        match result {
+            Ok(SaveAction::New(file)) =&gt; {
+                // Обновить название.
+                set_title(&amp;headerbar, file.get_path());
+                if let Some(parent) = file.get_dir() {
+                    let subtitle: &amp;str = &amp;parent.to_string_lossy();
+                    headerbar.set_subtitle(subtitle);
+                }
+                let mut current_file = current_file.write().unwrap();
+                *current_file = Some(file);
+                save.set_sensitive(false);
+            }
+            Ok(SaveAction::Saved) =&gt; {
+                if let Some(ref mut current_file) = *current_file.write().unwrap() {
+                    current_file.set_sum(&amp;text.as_bytes());
+                    save.set_sensitive(false);
+                }
+            }
+            _ =&gt; (),
+        }
+    }
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Обработка-сочетаний-клавиш" id="Обработка-сочетаний-клавиш">Обработка сочетаний клавиш</a></h1>
+<p>Добавим обработку некоторых сочетаний клавиш.</p>
+<ul>
+<li><strong>F11</strong> - перейти в полноэкранный режим.</li>
+<li><strong>Ctrl+S</strong> - сохранить файл.</li>
+</ul>
+<h2><a class="header" href="#Полноэкранный-режим-и-appconnect_events" id="Полноэкранный-режим-и-appconnect_events">Полноэкранный режим и <strong>App::connect_events()</strong></a></h2>
+<p>Вы хотим знать, когда мы должны вызывать метод <strong>Window::fulscreen()</strong> или
+метод <strong>Window::unfullscreen()</strong>, поэтому нам важно сохранять состояние
+нахождения в полноэкранном режиме в специальной логической переменной
+<strong>AtomicBool</strong>. Эта переменная будет передана в <strong>App::key_events()</strong>, который
+также примет ссылку на <strong>ActiveMetadata</strong> текущего файла для проведения
+необходимых операций с файлом, например, сохранение.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub fn connect_events(self) -&gt; ConnectedApp {
+    // Внешнее состояние, которое доступно для событий.
+    let current_file = Arc::new(RwLock::new(None));
+    // Отслеживать то, находится ли программа в полноэкранном режиме.
+    let fullscreen = Arc::new(AtomicBool::new(false));
+
+    {
+        let save = &amp;self.header.save;
+        let save_as = &amp;self.header.save_as;
+
+        // Присоединить все события, которые данные программа будет
+        // обрабатывать.
+        self.editor_changed(current_file.clone(), &amp;save.clone());
+        self.open_file(current_file.clone());
+        self.save_event(&amp;save.clone(), &amp;save.clone(), current_file.clone(), false);
+        self.save_event(&amp;save, &amp;save_as, current_file.clone(), true);
+        self.key_events(current_file, fullscreen);
+    }
+
+    // Обернуть `App` в `ConnectedApp` для того, чтобы дать возможность
+    // разработчику выполнять программу.
+    ConnectedApp(self)
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-метода-appkey_events" id="Реализация-метода-appkey_events">Реализация метода <strong>App::key_events()</strong></a></h2>
+<p>То место, где необходимо использовать пакет <strong>gdk</strong>: он поможет нам определить
+клавиши, на которые нажал пользователь, и были ли активированы некоторые
+состояния (подобно удерживанию Ctrl во время ввода).</p>
+<p>Используя <strong>connect_key_press_event()</strong> в главном окне, мы можем обрабатывать
+нажатия клавиш. Вам нужно сопоставлять полученное состояние с определенными
+клавишами и выполнять функциональность, которая вам нужна.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+/// Обрабатывает нажатия определенных сочетаний клавиш.
+fn key_events(
+    &amp;self,
+    current_file: Arc&lt;RwLock&lt;Option&lt;ActiveMetadata&gt;&gt;&gt;,
+    fullscreen: Arc&lt;AtomicBool&gt;,
+) {
+    // Получить необходимые ссылки заранее.
+    let editor = self.content.source.buff.clone();
+    let headerbar = self.header.container.clone();
+    let save_button = self.header.save.clone();
+
+    // Каждое нажатие кнопки вызовет эту функцию.
+    self.window.connect_key_press_event(move |window, gdk| {
+        match gdk.get_keyval() {
+            // Перевести программу в полноэкранный режим при нажатии на F11.
+            key::F11 =&gt; if fullscreen.fetch_xor(true, Ordering::SeqCst) {
+                window.unfullscreen();
+            } else {
+                window.fullscreen();
+            },
+            // Сохранить файл при нажатии Ctrl+S
+            key if key == 's' as u32 &amp;&amp; gdk.get_state().contains(CONTROL_MASK) =&gt; {
+                save(&amp;editor, &amp;headerbar, &amp;save_button, &amp;current_file, false);
+            }
+            _ =&gt; (),
+        }
+        Inhibit(false)
+    });
+}
+#}</code></pre></pre>
+<h1><a class="header" href="#Обзор-и-подведение-итогов" id="Обзор-и-подведение-итогов">Обзор и подведение итогов</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-9', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>

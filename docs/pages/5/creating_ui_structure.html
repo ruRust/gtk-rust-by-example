@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Создание структуры пользовательского интерфейса - Gtk-Rust by Example</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../theme/outdated.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../../pages/1/index.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="../../pages/2/hello_world.html"><strong aria-hidden="true">2.</strong> Hello World</a></li><li><a href="../../pages/3/index.html"><strong aria-hidden="true">3.</strong> Боксирующие кнопки</a></li><li><ol class="section"><li><a href="../../pages/3/objects.html"><strong aria-hidden="true">3.1.</strong> Упаковки, кнопки и метки</a></li><li><a href="../../pages/3/state.html"><strong aria-hidden="true">3.2.</strong> Сопровождение внешнего состояния</a></li><li><a href="../../pages/3/ui.html"><strong aria-hidden="true">3.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/3/programming.html"><strong aria-hidden="true">3.4.</strong> Программирование UI</a></li><li><a href="../../pages/3/review.html"><strong aria-hidden="true">3.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/4/index.html"><strong aria-hidden="true">4.</strong> Составитель статей из HTML</a></li><li><ol class="section"><li><a href="../../pages/4/entries.html"><strong aria-hidden="true">4.1.</strong> Поля, панели, прокручиваемые окна</a></li><li><a href="../../pages/4/horrorshow.html"><strong aria-hidden="true">4.2.</strong> HTML-шаблоны Horrorshow</a></li><li><a href="../../pages/4/structure.html"><strong aria-hidden="true">4.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/4/programming.html"><strong aria-hidden="true">4.4.</strong> Программирование UI</a></li><li><a href="../../pages/4/concl.html"><strong aria-hidden="true">4.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/5/index.html"><strong aria-hidden="true">5.</strong> Простой редактор Common Mark</a></li><li><ol class="section"><li><a href="../../pages/5/source_views.html"><strong aria-hidden="true">5.1.</strong> Выбор файла, просмотр кода и web-страниц</a></li><li><a href="../../pages/5/setting_modules.html"><strong aria-hidden="true">5.2.</strong> Настройка модулей</a></li><li><a href="../../pages/5/ui_misc_rs.html"><strong aria-hidden="true">5.3.</strong> Модуль ui/misc.rs</a></li><li><a href="../../pages/5/creating_ui_structure.html" class="active"><strong aria-hidden="true">5.4.</strong> Создание структуры пользовательского интерфейса</a></li><li><a href="../../pages/5/external_state.html"><strong aria-hidden="true">5.5.</strong> Работа с внешним состоянием</a></li><li><a href="../../pages/5/programming.html"><strong aria-hidden="true">5.6.</strong> Создание событий</a></li><li><a href="../../pages/5/markdown_to_html.html"><strong aria-hidden="true">5.7.</strong> Markdown в HTML</a></li><li><a href="../../pages/5/webviews.html"><strong aria-hidden="true">5.8.</strong> Обновление WebViews</a></li><li><a href="../../pages/5/file_choosers.html"><strong aria-hidden="true">5.9.</strong> Диалог выбора файла</a></li><li><a href="../../pages/5/programming_open_button.html"><strong aria-hidden="true">5.10.</strong> Программирование кнопки Open</a></li><li><a href="../../pages/5/programming_save_button.html"><strong aria-hidden="true">5.11.</strong> Программирование кнопки Save</a></li><li><a href="../../pages/5/binding_keys.html"><strong aria-hidden="true">5.12.</strong> Обработка сочетаний клавиш</a></li><li><a href="../../pages/5/review_conclusion.html"><strong aria-hidden="true">5.13.</strong> Обзор и подведение итогов</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Gtk-Rust by Example</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#Создание-структуры-пользовательского-интерфейса" id="Создание-структуры-пользовательского-интерфейса">Создание структуры пользовательского интерфейса</a></h1>
+<p>TODO: вставить ссылку на картинку</p>
+<h2><a class="header" href="#Реализация-модуля-пользовательского-интерфейса-uimodrs" id="Реализация-модуля-пользовательского-интерфейса-uimodrs">Реализация модуля пользовательского интерфейса (ui/mod.rs)</a></h2>
+<p>Теперь, когда относящийся к UI код перемещен в свой собственный модуль,
+очень важно объявить подмодули, которые данный модуль будет импортировать.
+Также важно объявить типы и функции, который данный модуль будет
+экспортировать.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+mod app;
+mod content;
+mod dialogs;
+mod header;
+pub mod misc;
+pub mod save;
+
+pub use self::app::App;
+pub use self::content::Content;
+pub use self::dialogs::{OpenDialog, SaveDialog};
+pub use self::header::Header;
+#}</code></pre></pre>
+<p>Как можно заметить выше, мы создаем следующие модули: <strong>app.rs</strong>,
+<strong>content.rs</strong>, <strong>dialogs.rs</strong>, <strong>save.rs</strong>, <strong>header.rs</strong>, <strong>misc.rs</strong>.</p>
+<h2><a class="header" href="#Реализация-структуры-программы-uiapprs" id="Реализация-структуры-программы-uiapprs">Реализация структуры программы (ui/app.rs)</a></h2>
+<p>Данная часть должна быть более-менее простой, так как использует код, подобный
+тому, что был задействован в предыдущих главах. С той разницей, что мы
+переместили инициализацию GTK в начало <strong>App</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk;
+use gtk::*;
+use super::Header;
+use super::Content;
+
+pub struct App {
+    pub window:  Window,
+    pub header:  Header,
+    pub content: Content,
+}
+
+impl App {
+    pub fn new() -&gt; App {
+        // Инициализация GTK.
+        if gtk::init().is_err() {
+            eprintln!(&quot;failed to initialize GTK Application&quot;);
+            process::exit(1);
+        }
+
+        // Создать окно верхнего уровня.
+        let window = Window::new(WindowType::Toplevel);
+        // Создать заголовочную панель и связанное с ней содержимое.
+        let header = Header::new();
+        // Создать контейнер для хранения содержимого и виджетов.
+        let content = Content::new();
+
+        // Сделать заголовочную панель виджетом, содержащим название.
+        window.set_titlebar(&amp;header.container);
+        // Установить заголовок окна.
+        window.set_title(&quot;Markdown Editor&quot;);
+        // Установить класс менеджера окна.
+        window.set_wmclass(&quot;md-editor&quot;, &quot;Markdown Editor&quot;);
+        // Иконка программы.
+        window.set_default_size(800, 600);
+        Window::set_default_icon_name(&quot;iconname&quot;);
+        // Добавить содержимое вовнутрь окна.
+        window.add(&amp;content.container);
+
+        // Запрограммировать поведение кнопки выхода.
+        window.connect_delete_event(move |_, _| {
+            main_quit();
+            Inhibit(false)
+        });
+
+        // Возвратить структуру программы.
+        App { window, header, content }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-структуры-заголовка-uiheaderrs" id="Реализация-структуры-заголовка-uiheaderrs">Реализация структуры заголовка (ui/header.rs)</a></h2>
+<p>Данную структуру будет реализовать ещё проще. Мы реализуем кнопки <strong>Open</strong>,
+<strong>Save</strong>, <strong>Save As</strong>, которые будут находиться в заголовке. Мы будем
+использовать мнемоники, так что одна из букв в названии кнопок будет
+становиться подчеркнутой при нажатии на клавишу <strong>Alt</strong>, так что пользователь
+сможет выбрать нужную кнопку.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+
+pub struct Header {
+    pub container: HeaderBar,
+    pub open:      Button,
+    pub save:      Button,
+    pub save_as:   Button,
+}
+
+impl Header {
+    pub fn new() -&gt; Header {
+        // Создать контейнер для хранения главной заголовочной панели. 
+        let container = HeaderBar::new();
+
+        // Установить текст, который будет показывать в заголовке
+        // заголовочной панели.
+        container.set_title(&quot;Markdown Editor&quot;);
+        // Включить элементы управления окна внутри заголовочной панели.
+        container.set_show_close_button(true);
+
+        let open = Button::new_with_mnemonic(&quot;_Open&quot;);
+        let save = Button::new_with_mnemonic(&quot;_Save&quot;);
+        let save_as = Button::new_with_mnemonic(&quot;Save _As&quot;);
+        container.pack_start(&amp;open);
+        container.pack_end(&amp;save_as);
+        container.pack_end(&amp;save);
+
+        // Возвратить заголовок и все его внутреннее содержимое.
+        Header { container, open, save, save_as }
+    }
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#Реализация-структуры-содержимого-uicontentrs" id="Реализация-структуры-содержимого-uicontentrs">Реализация структуры содержимого (ui/content.rs)</a></h2>
+<p>Здесь мы начнем использовать <strong>GtkWebViews</strong>, <strong>GtkSourceViews</strong>.</p>
+<h3><a class="header" href="#Создание-просмотра-web" id="Создание-просмотра-web">Создание просмотра web</a></h3>
+<p>Создание просмотра web очень легко создать. Выполняя следующий код, вы получите
+панель для просмотра web, которую вы можете внедрить в ваш пользовательский
+интерфейс так же, как вы можете это сделать с другими виджетами.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Create a the WebView for the preview pane.
+let context = WebContext::get_default().unwrap();
+let preview = WebView::new_with_context(&amp;context);
+#}</code></pre></pre>
+<p>Данный просмотр web прокручиваем, так что эту функциональность не нужно
+реализовывать самостоятельно.</p>
+<h3><a class="header" href="#Создаем-и-настраиваем-просмотр-кода" id="Создаем-и-настраиваем-просмотр-кода">Создаем и настраиваем просмотр кода</a></h3>
+<p>Просмотр кода являются более сложной реализацией, потому что он требуют
+дополнительной настройки. Мы попытаемся получить следующий результат:</p>
+<ul>
+<li>Табуляция должна быть размером в 4 пробела</li>
+<li>Просмотрщик должен показывать номера строк</li>
+<li>Будем использовать шрифт по умолчанию - <em>monospaced</em>, размер - 11</li>
+<li>Подсветка синтаксиса Markdown</li>
+<li>Попытка использовать тему Builder, если не получится - тему Classic</li>
+</ul>
+<p>Начнем со структуры <strong>Source</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+pub struct Source {
+    pub container: ScrolledWindow,
+    pub view:      View,
+    pub buff:      Buffer,
+}
+
+impl Source {
+    fn new() -&gt; Source {
+
+    }
+}
+#}</code></pre></pre>
+<p>После этого создадим буфер и представление для просмотра, это делается
+так же, как и создание простого текстового буфера и представления для
+просмотра. Как только это сделано, мы поместим представление вовнутрь
+прокручиваемого окна.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Создать SourceView для редактора на левой панели.
+let buff = Buffer::new(None);
+let view = View::new_with_buffer(&amp;buff);
+let container = ScrolledWindow::new(None, None);
+container.add(&amp;view);
+#}</code></pre></pre>
+<p>Установим настройки, используя функцию, принимающую представление и буфер:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+fn configure_source_view(view: &amp;View, buff: &amp;Buffer) {
+    view.set_show_line_numbers(true);
+    view.set_monospace(true);
+    view.set_insert_spaces_instead_of_tabs(true);
+    view.set_indent_width(4);
+    view.set_smart_backspace(true);
+    view.set_right_margin(100);
+    view.set_left_margin(10);
+    view.set_show_right_margin(true);
+    view.set_background_pattern(BackgroundPatternType::Grid);
+    // TODO: следующий релиз пакета GTK
+    // view.set_input_hints(InputHints::SPELLCHECK + InputHints::WORD_COMPLETION);
+}
+#}</code></pre></pre>
+<p>Мы можем использовать пакет <strong>pango</strong> для изменения шрифта в представлении.
+Заметьте, нам необходимо объявить типаж, чтобы понять откуда появился метод
+<code>override_font</code>. Возможно, будущее обновление GTK Rust API займется решением
+этого вопроса.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Настраивает шрифт, используемый в панели с кодом. По умолчанию используется
+// Monospaced, размер - 11. Когда будем изменять шрифт, нужно вручную указать
+// типаж, в котором находится нужный метод.
+let font = FontDescription::from_string(&quot;monospace 11&quot;);
+WidgetExt::override_font(&amp;view, &amp;font);
+#}</code></pre></pre>
+<p>Включим подсветку синтаксиса Markdown по умолчанию. Используемые языки
+извлекаются из <strong>LanguageManager</strong>. Язык будет присвоен напрямую буферу,
+а не представлению.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Включить подсветку Markdown
+LanguageManager::new()
+    .get_language(&quot;markdown&quot;)
+    .map(|markdown| buff.set_language(&amp;markdown));
+#}</code></pre></pre>
+<p>Укажем используемую схему.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let manager = StyleSchemeManager::new();
+    manager
+        .get_scheme(&quot;Builder&quot;)
+        .or(manager.get_scheme(&quot;Classic&quot;))
+        .map(|theme| buff.set_style_scheme(&amp;theme));
+#}</code></pre></pre>
+<h2><a class="header" href="#Полный-исходный-код" id="Полный-исходный-код">Полный исходный код</a></h2>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+use gtk::*;
+use pango::*;
+use sourceview::*;
+use webkit2gtk::*;
+
+pub struct Content {
+    pub container: Paned,
+    pub source:    Source,
+    pub preview:   WebView,
+}
+
+pub struct Source {
+    pub container: ScrolledWindow,
+    pub view:      View,
+    pub buff:      Buffer,
+}
+
+impl Content {
+    pub fn new() -&gt; Content {
+        // Создать контейнер для хранения главного содержимого
+        let container = Paned::new(Orientation::Horizontal);
+        let source = Source::new();
+
+        // Создать WebView для предыдущей панели.
+        let context = WebContext::get_default().unwrap();
+        let preview = WebView::new_with_context(&amp;context);
+
+        // Упакуем
+        container.pack1(&amp;source.container, true, true);
+        container.pack2(&amp;preview, true, true);
+
+        // Сделать так, чтобы две панели имели одинаковый размер - половина
+        // контейнера, в котором они находятся.
+        source.container.set_size_request(100, -1);
+        preview.set_size_request(100, -1);
+
+        Content { container, source, preview }
+    }
+}
+
+impl Source {
+    pub fn new() -&gt; Source {
+        // Создать SourceView для редактора на левой панели.
+        let buff = Buffer::new(None);
+        let view = View::new_with_buffer(&amp;buff);
+        let container = ScrolledWindow::new(None, None);
+        container.add(&amp;view);
+
+        configure_source_view(&amp;view, &amp;buff);
+
+        Source { container, buff, view }
+    }
+}
+
+fn configure_source_view(view: &amp;View, buff: &amp;Buffer) {
+    WidgetExt::override_font(view, &amp;FontDescription::from_string(&quot;monospace&quot;));
+
+    LanguageManager::new()
+        .get_language(&quot;markdown&quot;)
+        .map(|markdown| buff.set_language(&amp;markdown));
+
+    let manager = StyleSchemeManager::new();
+    manager
+        .get_scheme(&quot;Builder&quot;)
+        .or(manager.get_scheme(&quot;Classic&quot;))
+        .map(|theme| buff.set_style_scheme(&amp;theme));
+
+    view.set_show_line_numbers(true);
+    view.set_monospace(true);
+    view.set_insert_spaces_instead_of_tabs(true);
+    view.set_indent_width(4);
+    view.set_smart_backspace(true);
+    view.set_right_margin(100);
+    view.set_left_margin(10);
+    view.set_show_right_margin(true);
+    view.set_background_pattern(BackgroundPatternType::Grid);
+    // TODO: следующий релиз пакета GTK
+    // view.set_input_hints(InputHints::SPELLCHECK + InputHints::WORD_COMPLETION);
+}
+#}</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../pages/5/ui_misc_rs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../pages/5/external_state.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../pages/5/ui_misc_rs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../pages/5/external_state.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-9', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

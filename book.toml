@@ -1,0 +1,12 @@
+[book]
+title = "Gtk-Rust by Example"
+description = "A description"
+author = "N.Ritchie && Community"
+
+[output.html]
+google-analytics="UA-142155799-9"
+additional-css = ["theme/outdated.css"]
+
+[output.html.playpen]
+editable = false
+editor = "ace"

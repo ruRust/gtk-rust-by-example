@@ -1,0 +1,380 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Программирование UI - Gtk-Rust by Example</title>
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+        <link rel="stylesheet" href="../../theme/outdated.css">
+        
+
+        
+    </head>
+    <body class="light">
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            document.body.className = theme;
+            document.querySelector('html').className = theme + ' js';
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li><a href="../../pages/1/index.html"><strong aria-hidden="true">1.</strong> Введение</a></li><li><a href="../../pages/2/hello_world.html"><strong aria-hidden="true">2.</strong> Hello World</a></li><li><a href="../../pages/3/index.html"><strong aria-hidden="true">3.</strong> Боксирующие кнопки</a></li><li><ol class="section"><li><a href="../../pages/3/objects.html"><strong aria-hidden="true">3.1.</strong> Упаковки, кнопки и метки</a></li><li><a href="../../pages/3/state.html"><strong aria-hidden="true">3.2.</strong> Сопровождение внешнего состояния</a></li><li><a href="../../pages/3/ui.html"><strong aria-hidden="true">3.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/3/programming.html" class="active"><strong aria-hidden="true">3.4.</strong> Программирование UI</a></li><li><a href="../../pages/3/review.html"><strong aria-hidden="true">3.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/4/index.html"><strong aria-hidden="true">4.</strong> Составитель статей из HTML</a></li><li><ol class="section"><li><a href="../../pages/4/entries.html"><strong aria-hidden="true">4.1.</strong> Поля, панели, прокручиваемые окна</a></li><li><a href="../../pages/4/horrorshow.html"><strong aria-hidden="true">4.2.</strong> HTML-шаблоны Horrorshow</a></li><li><a href="../../pages/4/structure.html"><strong aria-hidden="true">4.3.</strong> Создание структуры UI</a></li><li><a href="../../pages/4/programming.html"><strong aria-hidden="true">4.4.</strong> Программирование UI</a></li><li><a href="../../pages/4/concl.html"><strong aria-hidden="true">4.5.</strong> Заключение и обзор</a></li></ol></li><li><a href="../../pages/5/index.html"><strong aria-hidden="true">5.</strong> Простой редактор Common Mark</a></li><li><ol class="section"><li><a href="../../pages/5/source_views.html"><strong aria-hidden="true">5.1.</strong> Выбор файла, просмотр кода и web-страниц</a></li><li><a href="../../pages/5/setting_modules.html"><strong aria-hidden="true">5.2.</strong> Настройка модулей</a></li><li><a href="../../pages/5/ui_misc_rs.html"><strong aria-hidden="true">5.3.</strong> Модуль ui/misc.rs</a></li><li><a href="../../pages/5/creating_ui_structure.html"><strong aria-hidden="true">5.4.</strong> Создание структуры пользовательского интерфейса</a></li><li><a href="../../pages/5/external_state.html"><strong aria-hidden="true">5.5.</strong> Работа с внешним состоянием</a></li><li><a href="../../pages/5/programming.html"><strong aria-hidden="true">5.6.</strong> Создание событий</a></li><li><a href="../../pages/5/markdown_to_html.html"><strong aria-hidden="true">5.7.</strong> Markdown в HTML</a></li><li><a href="../../pages/5/webviews.html"><strong aria-hidden="true">5.8.</strong> Обновление WebViews</a></li><li><a href="../../pages/5/file_choosers.html"><strong aria-hidden="true">5.9.</strong> Диалог выбора файла</a></li><li><a href="../../pages/5/programming_open_button.html"><strong aria-hidden="true">5.10.</strong> Программирование кнопки Open</a></li><li><a href="../../pages/5/programming_save_button.html"><strong aria-hidden="true">5.11.</strong> Программирование кнопки Save</a></li><li><a href="../../pages/5/binding_keys.html"><strong aria-hidden="true">5.12.</strong> Обработка сочетаний клавиш</a></li><li><a href="../../pages/5/review_conclusion.html"><strong aria-hidden="true">5.13.</strong> Обзор и подведение итогов</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div id="menu-bar-sticky-container">
+                        <div class="left-buttons">
+                            <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                            <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                                <i class="fa fa-paint-brush"></i>
+                            </button>
+                            <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                                <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                                <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            </ul>
+                            
+                            <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            
+                        </div>
+
+                        <h1 class="menu-title">Gtk-Rust by Example</h1>
+
+                        <div class="right-buttons">
+                            <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                                <i id="print-button" class="fa fa-print"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#Программирование-ui" id="Программирование-ui">Программирование UI</a></h1>
+<p>На этом этапе, мы сможем соединить всё вместе. Сначала мы установим стандартное значение здоровья для программы. Это значение будет использоваться для инициализации состояния структуры приложения. Затем, мы напишем код для кнопки удара и лечения, которые будут должны изменять значение содержимого в главном окне.</p>
+<h2><a class="header" href="#Перед-тем-как-мы-начнём" id="Перед-тем-как-мы-начнём">Перед тем, как мы начнём</a></h2>
+<p>В нашем распоряжении будет несколько строк, которые будут использованы в зависимости от действия. Это массив <strong>MESSAGES</strong>, к которому мы будем обращаться с помощью типажа с типом <strong>u8</strong>, который будет использован для получения индексов в массиве.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Заданные сообщения, которые будут использоваться в UI
+// при определённых условиях.
+const MESSAGES: [&amp;str; 3] = [&quot;Ой! Ты ударил меня!&quot;, &quot;...&quot;, &quot;Спасибо!&quot;];
+
+#[repr(u8)]
+// Типаж с типом `u8`, который используется как индекс в массиве `MESSAGES`.
+enum Message { Hit, Dead, Heal }
+#}</code></pre></pre>
+<p>Для тех, кто плохо разбирается в Rust, атрибут <code>#[repr(u8)]</code> определяет, что следующие элементы будут представлены типом <strong>u8</strong> в памяти. По умолчанию, варианты для типажей начинаются с нуля, поэтому <strong>Hit</strong> это <code>0</code>, тогда как <strong>Heal</strong> это <code>2</code>. Если вы хотите сделать это явным, вы можете написать это как:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+#[repr(u8)]
+enum Message { Hit = 0, Dead = 1, Heal = 2 }
+#}</code></pre></pre>
+<h2><a class="header" href="#Инициализация-компонента-health-и-структурирование-приложения" id="Инициализация-компонента-health-и-структурирование-приложения">Инициализация компонента Health и структурирование приложения</a></h2>
+<p>После инициализации GTK, мы можем создать наш компонент <code>health</code>, который будет обёрнут внутри атомарного счётчика (<strong>Arc</strong>). Если вы запомнили предыдущий код, то на самом деле внутреннее значение это <strong>AtomicUsize</strong>, который служит нашим счетчиком <code>health</code>. Это значение будет передаваться через несколько замыканий, следовательно требуется для счётчика ссылок.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let health = Arc::new(HealthComponent::new(10));
+#}</code></pre></pre>
+<p>Используя это значение, мы создадим структуру UI нашего приложения. Обратите внимание, что <code>&amp;health</code> автоматически ссылается как <strong>&amp;HealthComponent</strong>, даже если завёрнут в <strong>Arc</strong>.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+let app = App::new(&amp;health);
+#}</code></pre></pre>
+<h2><a class="header" href="#Запрограммируем-кнопку-удара" id="Запрограммируем-кнопку-удара">Запрограммируем кнопку удара</a></h2>
+<p>Находясь здесь, всё что нам надо - это написать код наших виджетов. Именно здесь мы будем передавать оба компонента <code>health</code> и другие различные виджеты UI через замыкания. Начнём с кнопки лечения. Нам просто нужно сказать программе: &quot;Что произойдет при нажатии на кнопку&quot; ?
+Типаж <strong>ButtonExt</strong> предоставляет метод <strong>connect_clicked()</strong> именно для этого.</p>
+<blockquote>
+<p>Обратите внимание, что виджеты в GTK обычно проходят через их замыкания, поэтому, если
+вы хотите управлять вызовом виджета, вы можете сделать это используя выбранное значение
+через замыкание. Мы не нуждаемся в этой функциональности, поэтому просто проигнорируем
+значение.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+widget.connect_action(move |widget| {});
+#}</code></pre></pre>
+</blockquote>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+{
+    // Запрограммируем кнопку `Ударить` чтобы уменьшить здоровье.
+    let health = health.clone();
+    let message = app.content.message.clone();
+    let info = app.content.health.clone();
+    app.header.hit.clone().connect_clicked(move |_| {
+        let new_health = health.subtract(1);
+        let action = if new_health == 0 { Message::Dead } else { Message::Hit };
+        message.set_label(MESSAGES[action as usize]);
+        info.set_label(new_health.to_string().as_str());
+    });
+}
+#}</code></pre></pre>
+<p>В коде выше, мы создали анонимную область, чтобы мы могли содержать наши клонированные ссылки.
+Каждый вызов <strong>clone()</strong> просто увеличивает счётчик ссылок и делает значение доступным, чтобы использовать его еще раз позже.</p>
+<p>После вычитания из компонента health, если health равен <code>0</code>, то мы должны вернуть <strong>Message::Dead</strong>, иначе, сообщением будет <strong>MessageHit</strong>. После того, как мы овладели этой информацией, это просто вопрос обновления метки с новым значением.</p>
+<h2><a class="header" href="#Запрограммируем-кнопку-лечения" id="Запрограммируем-кнопку-лечения">Запрограммируем кнопку лечения</a></h2>
+<p>Это работает почти также, поэтому мы можем скопировать и вставить код выше, а затем изменить его, чтобы удовлетворить наши потребности.</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+{
+    // Запрограммируем кнопку `Лечить`, чтобы вернуть очки здоровья.
+    let health = health.clone();
+    let message = app.content.message.clone();
+    let info = app.content.health.clone();
+    app.header.heal.clone().connect_clicked(move |_| {
+        let new_health = health.heal(5);
+        message.set_label(MESSAGES[Message::Heal as usize]);
+        info.set_label(new_health.to_string().as_str());
+    });
+}
+#}</code></pre></pre>
+<h2><a class="header" href="#В-общей-сложности" id="В-общей-сложности">В общей сложности</a></h2>
+<p>После программирования UI, вы можете завершить код, выполнив следующее:</p>
+<pre><pre class="playpen"><code class="language-rust">
+# #![allow(unused_variables)]
+#fn main() {
+// Сделаем все виджеты видимыми в UI.
+app.window.show_all();
+
+// Запуск основного цикла GTK.
+gtk::main();
+#}</code></pre></pre>
+<p>Ваш исходный код должен быть таким:</p>
+<pre><pre class="playpen"><code class="language-rust">// Заданные сообщения, которые будут использоваться в UI
+// при определённых условиях.
+const MESSAGES: [&amp;str; 3] = [&quot;Ouch! You hit me!&quot;, &quot;...&quot;, &quot;Thanks!&quot;];
+
+#[repr(u8)]
+// Типаж с типом `u8`, который используется как индекс в массиве `MESSAGES`.
+enum Message { Hit, Dead, Heal }
+
+fn main() {
+    // Инициализируем GTK перед продолжением.
+    if gtk::init().is_err() {
+        eprintln!(&quot;failed to initialize GTK Application&quot;);
+        process::exit(1);
+    }
+
+    /*  Установим начальное состояние для нашего компонента - `health`.
+     *   Воспользуемся `Arc`, для того, чтобы мы могли
+     *   использовать несколько programmable замыканий.
+     */
+    let health = Arc::new(HealthComponent::new(10));
+
+    // Инициализируем начальное состояние UI.
+    let app = App::new(&amp;health);
+
+    {
+        // Запрограммируем кнопку `Ударить` чтобы уменьшить здоровье.
+        let health = health.clone();
+        let message = app.content.message.clone();
+        let info = app.content.health.clone();
+        app.header.hit.clone().connect_clicked(move |_| {
+            let new_health = health.subtract(1);
+            let action = if new_health == 0 { Message::Dead } else { Message::Hit };
+            message.set_label(MESSAGES[action as usize]);
+            info.set_label(new_health.to_string().as_str());
+        });
+    }
+
+    {
+        // Запрограммируем кнопку `Лечить`, чтобы вернуть очки здоровья.
+        let health = health.clone();
+        let message = app.content.message.clone();
+        let info = app.content.health.clone();
+        app.header.heal.clone().connect_clicked(move |_| {
+            let new_health = health.heal(5);
+            message.set_label(MESSAGES[Message::Heal as usize]);
+            info.set_label(new_health.to_string().as_str());
+        });
+    }
+
+    // Сделаем все виджеты видимыми в UI.
+    app.window.show_all();
+
+    // Запуск основного цикла GTK.
+    gtk::main();
+}
+</code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../pages/3/ui.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../../pages/3/review.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a href="../../pages/3/ui.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a href="../../pages/3/review.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+        <!-- Google Analytics Tag -->
+        <script type="text/javascript">
+            var localAddrs = ["localhost", "127.0.0.1", ""];
+
+            // make sure we don't activate google analytics if the developer is
+            // inspecting the book locally...
+            if (localAddrs.indexOf(document.location.hostname) === -1) {
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-142155799-9', 'auto');
+                ga('send', 'pageview');
+            }
+        </script>
+        
+
+        
+
+        
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
